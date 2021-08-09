@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class searchandsort {
-//HELlllllllllllllllllllllllooooooooooooooooooo QWorlsdjskfdfsjkdfsjkfdsjklfdslj;dfsljkdljfskjsdfkldfsjlk;fdjfdjkfdksjlfdskljdjfsklfdsjlkjdfsklfdjlkdfjsklfjsdlkdfsl
     public static void main(String[] args) {
         
         Scanner Scan = new Scanner(System.in);
@@ -160,6 +159,9 @@ System.out.println(" ");
             right = mergesort(right);        
         
             while(true) {
+                if(n == array.length-1) {
+                    break;
+                }
                 if(left[n1] > right[n2]) {
                     array[n] = right[n2];
                     n++;
@@ -187,9 +189,6 @@ System.out.println(" ");
                     array[n] = left[n1];
                     n++;
                     n1++;
-                }
-                if(n == array.length-1) {
-                    break;
                 }
             }
         }

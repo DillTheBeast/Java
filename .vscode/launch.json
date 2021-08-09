@@ -9,6 +9,13 @@
             "name": "Launch searchandsort",
             "request": "launch",
             "mainClass": "searchandsort",
+            "projectName": "Java_bd463812"
+        },
+        {
+            "type": "java",
+            "name": "Launch searchandsort",
+            "request": "launch",
+            "mainClass": "searchandsort",
             "projectName": "Dillon_Code_75178989"
         },
         {
