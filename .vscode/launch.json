@@ -1,0 +1,133 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch searchandsort",
+            "request": "launch",
+            "mainClass": "searchandsort",
+            "projectName": "Dillon_Code_75178989"
+        },
+        {
+            "type": "java",
+            "name": "Launch searchandsort",
+            "request": "launch",
+            "mainClass": "searchandsort",
+            "projectName": "Dillon_Code_2e0a3130"
+        },
+        {
+            "type": "java",
+            "name": "Launch Hanoi",
+            "request": "launch",
+            "mainClass": "Hanoi",
+            "projectName": "Dillon_Code_2e0a3130"
+        },
+        {
+            "type": "java",
+            "name": "Launch Counting",
+            "request": "launch",
+            "mainClass": "Counting",
+            "projectName": "Dillon_Code_2e0a3130"
+        },
+        {
+            "type": "java",
+            "name": "Launch Connect4",
+            "request": "launch",
+            "mainClass": "Connect4",
+            "projectName": "Dillon_Code_c94dce4b"
+        },
+        {
+            "type": "java",
+            "name": "Launch improvedtictactoe",
+            "request": "launch",
+            "mainClass": "improvedtictactoe",
+            "projectName": "Dillon_Code_23b4716e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Connect4",
+            "request": "launch",
+            "mainClass": "Connect4",
+            "projectName": "Dillon_Code_2e0a3130"
+        },
+        {
+            "type": "java",
+            "name": "Launch improvedtictactoe",
+            "request": "launch",
+            "mainClass": "improvedtictactoe",
+            "projectName": "Dillon_Code_2e0a3130"
+        },
+        {
+            "type": "java",
+            "name": "Launch improvedcalculator",
+            "request": "launch",
+            "mainClass": "improvedcalculator",
+            "projectName": "Dillon_Code_2e0a3130"
+        },
+        {
+            "type": "java",
+            "name": "Launch Calculator",
+            "request": "launch",
+            "mainClass": "Calculator",
+            "projectName": "Dillon_Code_2e0a3130"
+        },
+        {
+            "type": "java",
+            "name": "Launch methods",
+            "request": "launch",
+            "mainClass": "methods",
+            "projectName": "Dillon_Code_2e0a3130"
+        },
+        {
+            "type": "java",
+            "name": "Launch TicTacToe",
+            "request": "launch",
+            "mainClass": "TicTacToe",
+            "projectName": "Dillon_Code_2e0a3130"
+        },
+        {
+            "type": "java",
+            "name": "Launch ShoppingList",
+            "request": "launch",
+            "mainClass": "ShoppingList",
+            "projectName": "Dillon_Code_2e0a3130"
+        },
+        {
+            "type": "java",
+            "name": "Launch Arrays",
+            "request": "launch",
+            "mainClass": "Arrays",
+            "projectName": "Dillon_Code_2e0a3130"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch HelloWorld",
+            "request": "launch",
+            "mainClass": "HelloWorld",
+            "projectName": "Dillon_Code_2e0a3130"
+        },
+        {
+            "type": "java",
+            "name": "Launch RPS",
+            "request": "launch",
+            "mainClass": "RPS",
+            "projectName": "Dillon_Code_2e0a3130"
+        },
+        {
+            "type": "java",
+            "name": "Launch Shapes",
+            "request": "launch",
+            "mainClass": "Shapes",
+            "projectName": "Dillon_Code_2e0a3130"
+        }
+    ]
+}
