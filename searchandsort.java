@@ -195,6 +195,7 @@ System.out.println(" ");
         }
         
         return array;
+        
     }
 
     public static int[] merge(int[] left, int[] right ) {
