@@ -129,9 +129,9 @@ System.out.println(" ");
                 
                 if(Sort[temp] > Sort[n]) {
                     temp = n;
-                }
-                
+                }  
             }
+
             y = Sort[temp];
             Sort[temp] = Sort[z];
             Sort[z] = y;
