@@ -160,39 +160,27 @@ System.out.println(" ");
             right = mergesort(right);        
         
             while(true) {
-                if(n1 == left.length-1 && n2 == right.length-1){
-                  break;  
+                for(int q = 0; q < array.length; q++) {
+                    System.out.println(array[q]);
+                    System.out.println("n1: " + n1);
+                    System.out.println("n2: " + n2);
+                    System.out.println("n: " + n);
+                    System.out.println("left: " + left[0]);
+                    System.out.println("right: " + right[0]);
                 }
-
-                else if(n1 == left.length-1) {
+                if ((n1 == left.length-1 && n2 == right.length-1) || n == array.length-1) {
+                    break;
+                }
+                if(left[n1] > right[n2] || n1 == left.length-1) {
                     array[n] = right[n2];
                     n++;
                     n2++;
                 }
-
-                else if(n2 == right.length-1) {
+                if(left[n1] < right[n2] || n2 == right.length-1) {
                     array[n] = left[n1];
                     n++;
                     n1++;
-                }
-
-                else if(left[n1] > right[n2]) {
-                    array[n] = right[n2];
-                    n++;
-                    n2++;
-                }
-
-                else if(left[n1] < right[n2]) {
-                    array[n] = left[n1];
-                    n++;
-                    n1++;
-                }
-
-                else if(left[n1] == right[n2]) {
-                    array[n] = left[n1];
-                    n++;
-                    n1++;
-                }   
+                }     
             }
         }
         return array;
