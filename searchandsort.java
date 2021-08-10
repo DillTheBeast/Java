@@ -155,6 +155,7 @@ System.out.println(" ");
             for(int r = 0; r < right.length; r++) {
                 right[r] = array[r];
             }
+            
             left = mergesort(left);
             right = mergesort(right);        
         
