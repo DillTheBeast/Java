@@ -164,21 +164,25 @@ System.out.println(" ");
                     n++;
                     n2++;
                 }
+
                 if(n2 == right.length-1) {
                     array[n] = left[n1];
                     n++;
                     n1++;
                 }
+
                 if(left[n1] > right[n2]) {
                     array[n] = right[n2];
                     n++;
                     n2++;
                 }
+
                 else if(left[n1] < right[n2]) {
                     array[n] = left[n1];
                     n++;
                     n1++;
                 }
+
                 else if(left[n1] == right[n2]) {
                     array[n] = left[n1];
                     n++;
@@ -187,13 +191,10 @@ System.out.println(" ");
                     n++;
                     n2++;
                 }
-                
             }
         }
         
-        
         return array;
-        
     }
 
     public static int[] merge(int[] left, int[] right ) {
