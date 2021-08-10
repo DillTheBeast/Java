@@ -152,22 +152,30 @@ System.out.println(" ");
                 left[l] = array[l];
             }
 
-            for(int r = 0; r < right.length; r++) {
-                right[r] = array[r];
+            for(int r = left.length ; r < array.length; r++) {
+                right[r-left.length] = array[r];
             }
             
             left = mergesort(left);
             right = mergesort(right);        
         
             while(true) {
+
+                /*
+                System.out.println("\narray: ");
                 for(int q = 0; q < array.length; q++) {
-                    System.out.println(array[q]);
-                    System.out.println("n1: " + n1);
-                    System.out.println("n2: " + n2);
-                    System.out.println("n: " + n);
-                    System.out.println("left: " + left[0]);
-                    System.out.println("right: " + right[0]);
+                    System.out.print(array[q]+", ");
                 }
+                System.out.println("\nleft: ");
+                for(int m = 0; m < left.length; m++) {
+                    System.out.print( left[m]+", ");
+                }
+                System.out.println("\nright: ");
+                for(int k = 0; k < right.length; k++) {
+                    System.out.print(right[k]+", ");
+                }
+                */
+
                 if ((n1 == left.length-1 && n2 == right.length-1) || n == array.length-1) {
                     break;
                 }
@@ -180,7 +188,12 @@ System.out.println(" ");
                     array[n] = left[n1];
                     n++;
                     n1++;
-                }     
+                } 
+                if(left[n1] == right[n2]) {
+                    array[n] = left[n1];
+                    n++;
+                    n1++;
+                }    
             }
         }
         return array;
