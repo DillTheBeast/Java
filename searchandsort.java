@@ -159,8 +159,15 @@ System.out.println(" ");
             right = mergesort(right);        
         
             while(true) {
-                if(n == array.length-1) {
-                    break;
+                if(n1 == left.length-1) {
+                    array[n] = right[n2];
+                    n++;
+                    n2++;
+                }
+                if(n2 == right.length-1) {
+                    array[n] = left[n1];
+                    n++;
+                    n1++;
                 }
                 if(left[n1] > right[n2]) {
                     array[n] = right[n2];
@@ -180,16 +187,7 @@ System.out.println(" ");
                     n++;
                     n2++;
                 }
-                if(n1 == left.length-1) {
-                    array[n] = right[n2];
-                    n++;
-                    n1++;
-                }
-                if(n2 == right.length-1) {
-                    array[n] = left[n1];
-                    n++;
-                    n1++;
-                }
+                
             }
         }
         
