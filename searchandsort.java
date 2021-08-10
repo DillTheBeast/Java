@@ -43,7 +43,6 @@ System.out.println(" ");
             right[x] = rnum;
         }
         */
-         
         System.out.println(" ");
         int[] array = new int[8];
         for(int d = 0; d < 8; d++) {
@@ -51,11 +50,10 @@ System.out.println(" ");
             System.out.print(" ");
             System.out.println(rnum);
             array[d] = rnum;
-            
-        }
+            }
 
         System.out.println(" ");
-        sorted = mergesort(array);
+        sorted = merge(mergesort(right), mergesort(left));
         for(int v = 0; v < sorted.length; v++) {
             System.out.println(sorted[v]);
         }
@@ -175,6 +173,7 @@ System.out.println(" ");
                     n++;
                     n1++;
                 }     
+                /*
                 System.out.println("\narray: ");
                 for(int q = 0; q < array.length; q++) {
                     System.out.print(array[q]+", ");
@@ -187,6 +186,7 @@ System.out.println(" ");
                 for(int k = 0; k < right.length; k++) {
                     System.out.print(right[k]+", ");
                 }
+                */
             }
         }
 
