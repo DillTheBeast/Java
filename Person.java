@@ -45,14 +45,14 @@ public class Person {
         return age;
     }
     
-    public void Birthday(int age) {
-        this.age = age;
+    public void birthday(int age) {
+        this.age = this.age++;
     }
 
     public boolean getAlive() {
         return alive;
     }
-    public void Dead(boolean alive) {
-        this.alive = alive;
+    public void dead() {
+        this.alive = false;
     }
 }
