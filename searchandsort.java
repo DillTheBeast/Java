@@ -15,7 +15,7 @@ public class searchandsort {
         int[] all = new int[8];
         int[] sorted = new int[left.length + right.length];
 
-//All for insertionsort method
+//All for insertionsort method or selectionsort method
 /*
 System.out.println(" ");
         int[] Sort = new int[10];
@@ -23,27 +23,26 @@ System.out.println(" ");
             int rnum = f.nextInt(100);
             System.out.print(" ");
             System.out.println(rnum);
-            Sort[d] = rnum;
-            
+            Sort[d] = rnum;    
+        }
+        //int[] x = insertionsort(Sort);
+        //int[] x = selectionsort(Sort);
+        for(int y = 0; y < Sort.length; y++) {
+            System.out.println(x[y]);
         }
         */
+
+//All for binarysearch method
         /*
-        System.out.println(" ");
-        for(int y = 0; y < left.length; y++) {
-            int rnum = f.nextInt(100);
-            System.out.println(" ");
-            System.out.println(rnum);
-            left[y] = rnum;
-        }
-        System.out.println(" ");
-        for(int x = 0; x < right.length; x++) {
-            int rnum = f.nextInt(100);
-            System.out.println(" ");
-            System.out.println(rnum);
-            right[x] = rnum;
-        }
+        System.out.println("Pick a number");
+        int n = Scan.nextInt();
+        int[] List = {5, 8, 12, 24, 33, 42, 56};
+        binarysearch(n, List);
+        System.out.println(binarysearch(n, List));
         */
-        System.out.println(" ");
+        
+//All for merge and mergesort method
+        System.out.println("Not sorted");
         int[] array = new int[8];
         for(int d = 0; d < 8; d++) {
             int rnum = f.nextInt(100);
@@ -53,28 +52,11 @@ System.out.println(" ");
             }
 
         System.out.println(" ");
-        sorted = merge(mergesort(right), mergesort(left));
+        sorted = mergesort(array);
+        System.out.println("Sorted");
         for(int v = 0; v < sorted.length; v++) {
             System.out.println(sorted[v]);
-        }
-
-        //int[] x = insertionsort(Sort);
-        //int[] x = selectionsort(Sort);
-        /*
-        int[] x = mergesortrec(Sort);
-        for(int y = 0; y < Sort.length; y++) {
-            System.out.println(x[y]);
-        }
-        */
-        
-//All for binarysearch method
-        /*
-        System.out.println("Pick a number");
-        int n = Scan.nextInt();
-        int[] List = {5, 8, 12, 24, 33, 42, 56};
-        binarysearch(n, List);
-        System.out.println(binarysearch(n, List));
-        */
+        } 
     }
     
     public static boolean binarysearch(int n, int[] List) {
@@ -137,110 +119,42 @@ System.out.println(" ");
         return Sort;
     }
 
-    public static int[] mergesort(int[] array) {
-        int n1 = 0;
-        int n2 = 0;
-        int n = 0;
-        
-        int[] left = new int[array.length/2];
-        int[] right = new int[array.length - array.length/2];
-            
-        if(array.length > 1) {
-            for(int l = 0; l < left.length; l++) {
-                left[l] = array[l];
-            }
-
-            for(int r = left.length ; r < array.length; r++) {
-                right[r-left.length] = array[r];
-            }
-            
-            left = mergesort(left);
-            right = mergesort(right);        
-        
-            while(true) {
-                if ((n1 == left.length-1 && n2 == right.length-1) || n == array.length-1) {
-                    break;
-                }
-                else if(left[n1] > right[n2] || n1 == left.length-1) {
-                    System.out.println(right[n2]);
-                    array[n] = right[n2];
-                    n++;
-                    n2++;
-                }
-                else if(left[n1] < right[n2] || n2 == right.length-1) {
-                    System.out.println(left[n1]);
-                    array[n] = left[n1];
-                    n++;
-                    n1++;
-                }     
-                /*
-                System.out.println("\narray: ");
-                for(int q = 0; q < array.length; q++) {
-                    System.out.print(array[q]+", ");
-                }
-                System.out.println("\nleft: ");
-                for(int m = 0; m < left.length; m++) {
-                    System.out.print( left[m]+", ");
-                }
-                System.out.println("\nright: ");
-                for(int k = 0; k < right.length; k++) {
-                    System.out.print(right[k]+", ");
-                }
-                */
-            }
-        }
-
-
-        return array;
-        
-    }
 
     public static int[] merge(int[] left, int[] right ) {
+//Variables
         int a = 0;
         int b = 0;
+        int c = 0;
         int[] sorted = new int[left.length + right.length];
-        while(left.length != a && right.length != b) {
-            /*
-            for(int j = 0; j < left.length; j++) {
-                System.out.println(left[j]);
-            }
-            for(int k = 0; k < right.length; k++) {
-                System.out.println(right[k]);
-            }
-            */
+//For the time that left is more than a and right is more than b
+        while(left.length > a && right.length > b) {
+//If the right number is less than the left
+//Put the right number into sorted and compare the next right number
             if(left[a] > right[b]) {
-                sorted[a+b] = right[b];
+                sorted[c] = right[b];
                 b++;
+                c++;
             }
+//If the 2 numbers are equal 
+//Put both numbers into sorted, one next to the other
             else if(left[a] == right[b]) {
-                sorted[a+b] = left[a];
-                sorted[a+b] = right[b];
+                sorted[c] = left[a];
+                c++;
+                sorted[c] = right[b];
                 a++;
                 b++;
+                c++;
             }
+//If the left number is less than the right
+//Put the left number into sorted and compare the next left number
             else if(left[a] < right[b]) {
-                sorted[a+b] = left[a];
+                sorted[c] = left[a];
                 a++;
+                c++;
                 
             }
-
-            for(int s = 0; s < sorted.length; s++) {
-                System.out.println("sorted" + sorted[s]);
-            }
-            System.out.println(" ");
-
-            for(int f = 0; f < left.length; f++) {
-                System.out.println("left" + left[f]);
-            }
-            System.out.println(" ");
-
-            for(int g = 0; g < right.length; g++) {
-            System.out.println("right" + right[g]);
-            }
-            System.out.println(" ");
-
         }
-
+//These for loops put the actual numbers into sorted when needed
         for(int r = b; r < right.length; r++) {
             sorted[r+a] = right[r];
         }
@@ -252,4 +166,38 @@ System.out.println(" ");
         return sorted;
 
     }
+
+    public static void printlist(int[] array){
+        for (int i:array){
+            System.out.print(i + ", ");
+        }
+        System.out.println(" ");
+    }
+    public static int[] mergesort(int[] array) {
+//Variables
+        int[] left = new int[array.length/2];
+        int[] right = new int[array.length - (array.length/2)];
+//If 8 greater than one do the for loops
+        if(array.length > 1) {
+            for(int l = 0; l < left.length; l++) {
+                left[l] = array[l];
+            }
+
+            for(int r = left.length; r < array.length; r++) {
+                right[r - left.length] = array[r];
+            }
+//Calling methods
+            left = mergesort(left);
+            right = mergesort(right);
+            array = merge(left, right);
+        }
+
+        
+
+
+        return array;
+        
+    }
+
+    
 }
