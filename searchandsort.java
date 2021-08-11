@@ -2,6 +2,7 @@
 
 
 import java.util.Scanner;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -42,7 +43,8 @@ System.out.println(" ");
         */
         
 //All for merge and mergesort method
-        System.out.println("Not sorted");
+        /*
+        System.out.println("Not Sorted");
         int[] array = new int[8];
         for(int d = 0; d < 8; d++) {
             int rnum = f.nextInt(100);
@@ -56,9 +58,9 @@ System.out.println(" ");
         System.out.println("Sorted");
         for(int v = 0; v < sorted.length; v++) {
             System.out.println(sorted[v]);
-        } 
+        }
+        */
     }
-    
     public static boolean binarysearch(int n, int[] List) {
         for(int x = 0; x < List.length; x++) {
             System.out.println(List[x]);
