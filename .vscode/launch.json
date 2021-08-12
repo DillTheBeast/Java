@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch War",
+            "request": "launch",
+            "mainClass": "War",
+            "projectName": "Java_bd463812"
+        },
+        {
+            "type": "java",
             "name": "Launch Deck",
             "request": "launch",
             "mainClass": "Deck",

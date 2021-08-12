@@ -19,16 +19,16 @@ public class Card {
     }
     public String toString() {
         if(number == 1) {
-            return  "Ace of " + suit + "s";
+            return  "The Ace of " + suit + "s";
         }
         if(number == 11) {
-            return  "Jack of " + suit + "s";
+            return  "The Jack of " + suit + "s";
         }
         if(number == 12) {
-            return  "Queen of " + suit + "s";
+            return  " The Queen of " + suit + "s";
         }
         if(number == 13) {
-            return  "King of " + suit + "s";
+            return  "The King of " + suit + "s";
         }
         return  number + " of " + suit + "s";
         
