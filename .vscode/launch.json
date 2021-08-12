@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Deck",
+            "request": "launch",
+            "mainClass": "Deck",
+            "projectName": "Java_bd463812"
+        },
+        {
+            "type": "java",
+            "name": "Launch Card",
+            "request": "launch",
+            "mainClass": "Card",
+            "projectName": "Java_bd463812"
+        },
+        {
+            "type": "java",
             "name": "Launch searchandsort",
             "request": "launch",
             "mainClass": "searchandsort",

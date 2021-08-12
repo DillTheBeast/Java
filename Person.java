@@ -6,7 +6,8 @@ public class Person {
     private int age;
     private boolean alive = true;
     public static void main(String[] args) {
-        
+        Person p = new Person("Blue", "Black", "Pale", "Male", 15);
+        p.birthday();
     }
 
     public Person(String eyecolor, String haircolor, String skintone, String gender, int age) {
@@ -45,13 +46,14 @@ public class Person {
         return age;
     }
     
-    public void birthday(int age) {
+    public void birthday() {
         this.age = this.age++;
     }
 
     public boolean getAlive() {
         return alive;
     }
+
     public void dead() {
         this.alive = false;
     }
