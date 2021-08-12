@@ -7,7 +7,7 @@ public class Deck {
     public static void main(String[] args) {
         Deck d = new Deck();
         Deck d2 = new Deck();
-        d.Shuffle;
+        d.Shuffle();
         System.out.println(d);
 
     }
@@ -24,8 +24,8 @@ public class Deck {
     }   
     public void Shuffle() {
         for(int x = 1; x < 52; x++) {
-            Card temp = Cardlist.remove(0);
-            int r = Math.floor(Math.random()*(52-1+1)+1);
+            Card temp = CardList.remove(0);
+            int r = (int) Math.floor(Math.random()*(52-1+1)+1);
             CardList.add(r, temp);
         }
     }
