@@ -2,13 +2,14 @@
 public class Card {
     private int number;
     private String suit;
+    public static final String[] suits = {"Diamond","Heart","Spade","Club"};
     public static void main(String[] args) {
         Card c = new Card(5, "Diamond");
         System.out.println(c);
     }
-    public Card(int number, String suit) {
+    public Card(int number, String s) {
         this.number = number;
-        this.suit = suit;
+        this.suit = s;
     }
     public int getNumber() {
         return number;
