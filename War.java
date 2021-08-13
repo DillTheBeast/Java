@@ -3,40 +3,44 @@ public class War {
     public static String input;
     public static boolean Winner = false;
     public static String winput;
+    public static Scanner Scan = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner Scan = new Scanner(System.in);
+//Deck d = players deck
+//Deck d2 = computers deck
         Deck d = new Deck();
-        Deck d2 = new Deck(true);
+        Deck d2 = new Deck(true); 
         d.Shuffle();
         for(int y = 0; y < 26; y++) {
             d2.add(d.draw());
         }
-        System.out.println("Welcome to War. Type in d to draw your top card.");
+        //System.out.println("Welcome to War. Type in d to draw your top card.");
         while(Winner == false) {
-        input = Scan.nextLine();
-            while (!input.toLowerCase().contains("d")) {
-                System.out.println("Please type d to draw your card");
-                input = Scan.nextLine();
-        }    
-        Card a = d.draw();
-        System.out.println("You drew " + a);
-        Card b = d2.draw();
-        System.out.println("Your opponent drew " + b);
-        if(d.number < d2.number) {
-
-        }
+        //input = Scan.nextLine();
+        //validinput();
+        //System.out.println(d);
+        //Finding out the computers card vs the players card
+            Card a = d.draw();
+            System.out.println("You drew " + a);
+            Card b = d2.draw();
+            System.out.println("Your opponent drew " + b);
+            win(a, b, d, d2);
+            winwhole(d, d2);
+            //System.out.println("Type d to draw your next card.");
         }
     }
-    public static void wingame(Deck d) {
-        Scanner Scan = new Scanner(System.in);
-        if(d.size == 0 || d.size == 52) {
+//Method checks for the winner of the entire game
+    public static void winwhole(Deck d, Deck d2) {
+//Finding if there is a winner
+        if(d.size == 0 || d2.size == 0) {
+//If there is winner then find out if the player lost
             if(d.size == 0) {
-                System.out.println("You lose. RIP. Would you like to play again?");
+                System.out.println("You lose. RIP. Would you like to play again?");   
             }
-            if(d.size == 52) {
+//If there is winner then find out if the player won
+            if(d2.size == 0) {
                 System.out.println("You win! Nice Job! Would you like to play again?");
             }
-            
+//Finding out if they want to play again
             winput = Scan.nextLine();
             if(winput.toLowerCase() == "yes") {
                 System.out.println("Ok then lets go again");
@@ -46,5 +50,33 @@ public class War {
                 Winner = true;
             }
         }
+    }
+//Method checks for the winner of this round
+    public static void win(Card a, Card b, Deck d, Deck d2) {
+//Lose
+        if(a.getNumber() < b.getNumber()) {
+            System.out.println("You lost this match. RIP :(");
+            d2.add(a);
+            d2.add(b);
+        }
+//Win
+        if(a.getNumber() > b.getNumber()) {
+            System.out.println("You won this match. Nice!");
+            d.add(a);
+            d.add(b);
+        }
+//Tie
+        if(a.getNumber() == b.getNumber()) {
+            System.out.println("You have tied. Type d to go into war.");
+            win(a, b, d, d2);
+        }
+    }
+//Method makes sure they type d to draw there card
+//If not then ask them to type d again
+    public static void validinput() {
+        while (!input.toLowerCase().contains("d")) {
+            System.out.println("Please type d to draw your card");
+            input = Scan.nextLine();
+        } 
     }
 }

@@ -3,13 +3,7 @@ import java.util.Random;
 
 public class Deck {
     public int size = 52;
-    public static ArrayList<Card> CardList = new ArrayList<Card>();
-    public static void main(String[] args) {
-        Deck d = new Deck();
-        Deck d2 = new Deck(true);
-        d.Shuffle();
-        System.out.println(d);
-    }
+    public ArrayList<Card> CardList = new ArrayList<Card>();
     public Deck() {
         for(int n = 1; n < 14; n++) {
             for(String s: Card.suits) {
