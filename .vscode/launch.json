@@ -9,6 +9,13 @@
             "name": "Launch War",
             "request": "launch",
             "mainClass": "War",
+            "projectName": "Java_103ddc93"
+        },
+        {
+            "type": "java",
+            "name": "Launch War",
+            "request": "launch",
+            "mainClass": "War",
             "projectName": "Java_bd463812"
         },
         {
