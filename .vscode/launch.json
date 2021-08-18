@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch searchandsort",
+            "request": "launch",
+            "mainClass": "searchandsort",
+            "projectName": "Java_103ddc93"
+        },
+        {
+            "type": "java",
+            "name": "Launch Hanoi",
+            "request": "launch",
+            "mainClass": "Hanoi",
+            "projectName": "Java_103ddc93"
+        },
+        {
+            "type": "java",
+            "name": "Launch TicTacToe",
+            "request": "launch",
+            "mainClass": "TicTacToe",
+            "projectName": "Java_103ddc93"
+        },
+        {
+            "type": "java",
+            "name": "Launch Connect4",
+            "request": "launch",
+            "mainClass": "Connect4",
+            "projectName": "Java_103ddc93"
+        },
+        {
+            "type": "java",
+            "name": "Launch improvedcalculator",
+            "request": "launch",
+            "mainClass": "improvedcalculator",
+            "projectName": "Java_103ddc93"
+        },
+        {
+            "type": "java",
             "name": "Launch War",
             "request": "launch",
             "mainClass": "War",

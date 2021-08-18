@@ -17,7 +17,7 @@ public class searchandsort {
         int[] sorted = new int[left.length + right.length];
 
 //All for insertionsort method or selectionsort method
-/*
+        /*
 System.out.println(" ");
         int[] Sort = new int[10];
         for(int d = 0; d < 10; d++) {
@@ -32,6 +32,7 @@ System.out.println(" ");
             System.out.println(x[y]);
         }
         */
+        
 
 //All for binarysearch method
         /*
@@ -43,7 +44,7 @@ System.out.println(" ");
         */
         
 //All for merge and mergesort method
-        /*
+        
         System.out.println("Not Sorted");
         int[] array = new int[8];
         for(int d = 0; d < 8; d++) {
@@ -59,7 +60,7 @@ System.out.println(" ");
         for(int v = 0; v < sorted.length; v++) {
             System.out.println(sorted[v]);
         }
-        */
+        
     }
     public static boolean binarysearch(int n, int[] List) {
         for(int x = 0; x < List.length; x++) {
