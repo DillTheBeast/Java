@@ -2,7 +2,7 @@
 import java.util.Scanner;
 import java.util.Random;
 
-class Main {
+class HotandCold {
   public static void main(String[] args) {
     // Declaring Variables
     Scanner Scan = new Scanner(System.in);
