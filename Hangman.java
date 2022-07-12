@@ -38,11 +38,13 @@ class Hangman {
         System.out.println("Your X counter is at " + x);
       }
       else if(idx >= 0) {
+          while(idx >= 0) {
         System.out.println("You got a letter right nice.");
         holder[idx] = input + " ";
         word = word.substring(0, idx) + " " + word.substring(idx + 1);
         idx = word.indexOf(input);
         w++;
+          }
       }
       if(w == ogLength) {
         System.out.println("You won. Nice Job. The word was " + ogWord);
