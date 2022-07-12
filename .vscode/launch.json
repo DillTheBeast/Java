@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SubTest",
+            "request": "launch",
+            "mainClass": "SubTest",
+            "projectName": "Java_aade2278"
+        },
+        {
+            "type": "java",
+            "name": "Launch Hangman",
+            "request": "launch",
+            "mainClass": "Hangman",
+            "projectName": "Java_aade2278"
+        },
+        {
+            "type": "java",
             "name": "Launch searchandsort",
             "request": "launch",
             "mainClass": "searchandsort",
