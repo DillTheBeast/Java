@@ -1,6 +1,4 @@
 import java.util.Scanner;
-
-import javax.sound.sampled.SourceDataLine;
 public class Palindrome {
     public static void main(String[] args) {
 //Declaring Variables
@@ -15,12 +13,13 @@ public class Palindrome {
             input2 += input.charAt(l);
         }
 //Finding out if input is the same thing as the backwards input
-//Finding out if input is not the same thing as the backwards input
 
         if(input .equals(input2)) {
             System.out.println(input + " backwords is " + input2);
             System.out.println("This means that " + input + " is a palindrome");
         }
+//Finding out if input is not the same thing as the backwards input
+
         else {
             System.out.println(input + " backwords is " + input2);
             System.out.println("This means that " + input + " is not a palindrome");
