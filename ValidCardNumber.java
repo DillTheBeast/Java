@@ -55,8 +55,8 @@ public class ValidCardNumber {
              even= new int[card.length/2];
         }
         else {
-             odd = new int[card.length/2-1];
-             even = new int[card.length/2-1];
+             odd = new int[card.length/2];
+             even = new int[card.length/2];
         }
         //Going through and seperating the numbers into two arrays
         //The odd is every other number startign at the first number
