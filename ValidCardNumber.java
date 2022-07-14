@@ -23,32 +23,91 @@ public class ValidCardNumber {
         
         // An array of all the arrays above
          int[][] batch = {valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5};
-
-        //Declaring normal variables
-         int odd[] = new int[valid1.length/2];
-         int even[] = new int[valid1.length/2];
-         int idxo = 0;
-         int idxe = 0;
-        //Making for loops to split the array into an even and an odd array(First step to finding if the card number is valid)
-        for(int o = 0; o < valid1.length-1; o += 2) {
-            odd[idxo] = valid1[o];
-            idxo++;
-        }
-        for(int e = 1; e < valid1.length-1; e += 2) {
-            even[idxe] = valid1[e];
-            idxe++;
-        }
-        //Doubling the odd set of numbers
-        for(int d = 0; d < odd.length; d++) {
-            odd[d] = odd[d]*2;
-        }
-        //printArray(odd);
-
+        //Calling the method with all of the steps
+         validCard(valid3);
     }
+
         //Method to print out the arrays if needed for testing
     public static void printArray(int[] arr) {
         for(int l = 0; l < arr.length-1; l++) {
             System.out.println(arr[l]);
         }
+    }
+        //This method basically has all of the steps in it
+    public static boolean validCard(int[] card) {
+        //Declaring all of the needed variables
+      
+        int odd[];
+        int even[];
+        int idxo = 0;
+        int idxe = 0;
+        int lastDigit, firstDigit, divisor;;
+        int totalDigits = 2;
+        int sum = 0;
+        int totalodd = 0;
+        int totaleven = 0;
+        int total = 0;
+        int end = 0;
+
+
+        if(card.length%2 == 0) {
+             odd = new int[card.length/2];
+             even= new int[card.length/2];
+        }
+        else {
+             odd = new int[card.length/2-1];
+             even = new int[card.length/2-1];
+        }
+        //Going through and seperating the numbers into two arrays
+        //The odd is every other number startign at the first number
+        for(int o = card.length-1; o > 0; o -= 2) {   
+                odd[idxo] = card[o];
+                idxo++;
+        }
+
+        //The even is every other number starting at the second number
+        for(int e = card.length-1; e > 0; e -= 2) {
+                even[idxe] = card[e];
+                idxe++;
+        }
+
+        //Doubling the odd set of numbers
+        for(int d = 0; d < odd.length; d++) {
+            odd[d] = odd[d]*2;
+        }
+        //Adding the first and last digits of the double digit numbers
+        for(int l = 0; l < odd.length; l++) {
+            if(odd[l] >= 10) {
+                lastDigit = odd[l]%10;
+                divisor = (int)Math.pow(10, totalDigits-1);
+                firstDigit = odd[l] / divisor;
+                sum = firstDigit + lastDigit;
+                odd[l] = sum;
+            }
+        }
+        //Adding together all of the numbers in each array
+        for(int s = 0; s < odd.length; s++) {
+            totalodd = totalodd + odd[s];
+            totaleven = totaleven + even[s];
+        }
+
+        //Adding the sum of both arrays together
+        total = totalodd + totaleven;
+
+        //Finding out if the number is divisible by 10
+        //If it is then end will be 0
+        end = total%10;
+
+        //If the end is 0 then say that the card number is valid
+        if(end == 0) {
+            System.out.println("This card number is valid");
+            return true;
+        }
+        //If end isn't 0 then saying that the card number isn't valid
+        else {
+            System.out.println("This card number is not valid");
+            return false;
+        }
+        
     }
 }

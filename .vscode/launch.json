@@ -9,6 +9,13 @@
             "name": "Launch ValidCardNumber",
             "request": "launch",
             "mainClass": "ValidCardNumber",
+            "projectName": "Java_bd463812"
+        },
+        {
+            "type": "java",
+            "name": "Launch ValidCardNumber",
+            "request": "launch",
+            "mainClass": "ValidCardNumber",
             "projectName": "Java_fe62be9"
         },
         {
