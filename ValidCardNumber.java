@@ -60,13 +60,13 @@ public class ValidCardNumber {
         }
         //Going through and seperating the numbers into two arrays
         //The odd is every other number startign at the first number
-        for(int o = card.length-1; o > 0; o -= 2) {   
+        for(int o = card.length; o > 0; o -= 2) {   
                 odd[idxo] = card[o];
                 idxo++;
         }
 
         //The even is every other number starting at the second number
-        for(int e = card.length-1; e > 0; e -= 2) {
+        for(int e = card.length; e > 0; e -= 2) {
                 even[idxe] = card[e];
                 idxe++;
         }
