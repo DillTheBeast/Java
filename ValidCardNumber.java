@@ -38,10 +38,14 @@ public class ValidCardNumber {
             even[idxe] = valid1[e];
             idxe++;
         }
-        //printArray(even);
+        //Doubling the odd set of numbers
+        for(int d = 0; d < odd.length; d++) {
+            odd[d] = odd[d]*2;
+        }
+        //printArray(odd);
 
     }
-
+        //Method to print out the arrays if needed for testing
     public static void printArray(int[] arr) {
         for(int l = 0; l < arr.length-1; l++) {
             System.out.println(arr[l]);

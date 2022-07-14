@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ValidCardNumber",
+            "request": "launch",
+            "mainClass": "ValidCardNumber",
+            "projectName": "Java_fe62be9"
+        },
+        {
+            "type": "java",
+            "name": "Launch searchandsort",
+            "request": "launch",
+            "mainClass": "searchandsort",
+            "projectName": "Java_fe62be9"
+        },
+        {
+            "type": "java",
             "name": "Launch SubTest",
             "request": "launch",
             "mainClass": "SubTest",
