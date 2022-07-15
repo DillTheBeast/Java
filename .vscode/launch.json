@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CarTester",
+            "request": "launch",
+            "mainClass": "CarTester",
+            "projectName": "Java_bd463812"
+        },
+        {
+            "type": "java",
             "name": "Launch ValidCardNumber",
             "request": "launch",
             "mainClass": "ValidCardNumber",
