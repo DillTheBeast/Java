@@ -6,6 +6,76 @@
     "configurations": [
         {
             "type": "java",
+<<<<<<< HEAD
+            "name": "Launch ShoppingList",
+            "request": "launch",
+            "mainClass": "ShoppingList",
+            "projectName": "Java_103ddc93"
+        },
+        {
+            "type": "java",
+            "name": "Launch Arrays",
+            "request": "launch",
+            "mainClass": "Arrays",
+            "projectName": "Java_103ddc93"
+=======
+            "name": "Launch KnightandRadianceTester",
+            "request": "launch",
+            "mainClass": "KnightandRadianceTester",
+            "projectName": "Java_bd463812"
+        },
+        {
+            "type": "java",
+            "name": "Launch KnightTester",
+            "request": "launch",
+            "mainClass": "KnightTester",
+            "projectName": "Java_bd463812"
+        },
+        {
+            "type": "java",
+            "name": "Launch CarTester",
+            "request": "launch",
+            "mainClass": "CarTester",
+            "projectName": "Java_bd463812"
+        },
+        {
+            "type": "java",
+            "name": "Launch ValidCardNumber",
+            "request": "launch",
+            "mainClass": "ValidCardNumber",
+            "projectName": "Java_bd463812"
+        },
+        {
+            "type": "java",
+            "name": "Launch ValidCardNumber",
+            "request": "launch",
+            "mainClass": "ValidCardNumber",
+            "projectName": "Java_fe62be9"
+        },
+        {
+            "type": "java",
+            "name": "Launch searchandsort",
+            "request": "launch",
+            "mainClass": "searchandsort",
+            "projectName": "Java_fe62be9"
+        },
+        {
+            "type": "java",
+            "name": "Launch SubTest",
+            "request": "launch",
+            "mainClass": "SubTest",
+            "projectName": "Java_aade2278"
+        },
+        {
+            "type": "java",
+            "name": "Launch Hangman",
+            "request": "launch",
+            "mainClass": "Hangman",
+            "projectName": "Java_aade2278"
+>>>>>>> a0d1a5b00eb033c29a0e3b35084a0af6dc05d6b1
+        },
+        {
+            "type": "java",
             "name": "Launch searchandsort",
             "request": "launch",
             "mainClass": "searchandsort",
