@@ -7,10 +7,11 @@ class SubTest {
         String word = "Hello";
         String ogWord = word;
 
-        System.out.println(ogWord);
+        //System.out.println(ogWord);
 
         word = "bird";
-        System.out.println(ogWord);
+        //System.out.println(ogWord);
+        System.out.println(20%10);
 
         //Before update
         //System.out.println(word);

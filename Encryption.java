@@ -38,10 +38,19 @@ public class Encryption {
     */
     public static String Ceaser(String input, int idx, int input2) {
         int arr[] = new int [input.length()];
-        for(int a = 0; a < input.length(); a++) {
-            arr[a] = input.charAt(idx) + input2;
-            idx++;
-        }
+        char convert[] = new char[arr.length];
+        String newWord = "";
+        int idk = 26;
+            for(int a = 0; a < input.length(); a++) {
+                arr[a] = input.charAt(idx) + input2;
+                idx++;
+            }
+            for(int b = 0; b < input.length(); b++) {
+                convert[b] = (char)(arr[b]);
+                newWord = String.valueOf(convert);
+            }
+            
+        System.out.println(newWord);
         return"";
     }
     public static String railFence() {

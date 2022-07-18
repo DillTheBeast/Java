@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SubTest",
+            "request": "launch",
+            "mainClass": "SubTest",
+            "projectName": "Java_bd463812"
+        },
+        {
+            "type": "java",
             "name": "Launch Connect4",
             "request": "launch",
             "mainClass": "Connect4",
