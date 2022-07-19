@@ -40,7 +40,6 @@ public class Encryption {
         int arr[] = new int [input.length()];
         char convert[] = new char[arr.length];
         String newWord = "";
-        int idk = 26;
             for(int a = 0; a < input.length(); a++) {
                 arr[a] = input.charAt(idx) + input2;
                 idx++;
@@ -48,8 +47,9 @@ public class Encryption {
             for(int b = 0; b < input.length(); b++) {
                 convert[b] = (char)(arr[b]);
                 newWord = String.valueOf(convert);
+                
             }
-            
+
         System.out.println(newWord);
         return"";
     }
