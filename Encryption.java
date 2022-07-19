@@ -55,16 +55,14 @@ public class Encryption {
     }
     */
     public static String railFence(String input, int key, int idx) {
-        char arr[] = new char [input.length()];
-        int index = input.indexOf(key+1);
-        System.out.println(index);
-        /*
-        for(int a = 0; a < input.length(); a+=key+1) {
-            //Need to have letter 1 skip the next however many the key is and take the number after that
-            //arr[a] = index;
-            System.out.println(arr[a]);
-        }
-        */
+        int il = input.length();
+        int ky = key;
+        char arr1[] = new char[input.length()/key];
+        int length = il/ky;
+
+        for(int a = 0; a < length; a++) {
+            arr1[a] = ky;
+        }      
         return "";
     }
     public static String Beufort() {
