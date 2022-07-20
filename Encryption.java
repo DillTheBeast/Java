@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 public class Encryption {
     public static void main(String[] args) {
         Scanner Scan = new Scanner(System.in);
@@ -55,14 +56,25 @@ public class Encryption {
     }
     */
     public static String railFence(String input, int key, int idx) {
-        int il = input.length();
-        int ky = key;
-        char arr1[] = new char[input.length()/key];
-        int length = il/ky;
+        ArrayList<ArrayList<Character>> al = new ArrayList<ArrayList<Character>>(key); 
 
-        for(int a = 0; a < length; a++) {
-            arr1[a] = ky;
-        }      
+        for(int  i = 0; i < key; i++){
+            al.add(new ArrayList<Character>());
+        }
+
+
+        for(int i = 0; i < input.length(); i++) {
+            char letter = input.charAt(i);
+            int position = i % key;
+            al.get(position).add(letter);
+            //System.out.println(al.get(position).toString());
+        }
+        for(int i = 0; i < key; i++) {
+            al.addAll(al);
+            int finalposition = i % key;
+            System.out.print(al.get(finalposition).toString() + " ");
+        }
+
         return "";
     }
     public static String Beufort() {
