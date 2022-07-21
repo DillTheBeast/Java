@@ -1,3 +1,4 @@
+
 public class ValidCardNumber {
     public static void main(String[] args) {
         //All valid credit card numbers
