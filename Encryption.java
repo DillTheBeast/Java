@@ -14,7 +14,7 @@ public class Encryption {
         //Only for Beufort
         System.out.println("Choose a keyword to help cypher your word");
         String bKey = Scan.nextLine();
-        System.out.println(Beufort(input, bKey, idx));
+        System.out.println(vigenere(input, bKey, idx));
         //Alphabet encryption and decoder
         /*
         System.out.println(alphabet(input, idx));
@@ -117,12 +117,27 @@ public class Encryption {
         
     }
     */
-    public static String Beufort(String input, String bKey, int idx) {
+    public static String vigenere(String input, String bKey, int idx) {
         int idx2 = idx;
         char keyStream[] = new char[input.length()];
+        char cipherText[] = new char[input.length()];
+        //iNum = input number and kNum = key number
+        int kNum;
+        int iNum;
+        //Creating keystream    
         for(int i = 0; i < input.length(); i++) {
-            keyStream[i] = bKey.charAt(idx);
-            System.out.println(keyStream[i]);
+            keyStream[i] = bKey.charAt(idx2);
+            idx2 = (idx2+1) % bKey.length();
+            
+        }
+        //New letter = iNum + kNum - 1
+        for(int i = 0; i < input.length(); i++) {
+            kNum = keyStream[i] - 64;
+            iNum = input.charAt(i) - 64;
+            cipherText[i] = (char)((iNum + kNum) % 26 - 1 + 64);
+            System.out.print(cipherText[i]);
+            System.out.println("");
+            
         }
         return "";
     }
