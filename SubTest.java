@@ -11,7 +11,7 @@ class SubTest {
 
         word = "bird";
         //System.out.println(ogWord);
-        System.out.println(20%10);
+        System.out.println(15%26);
 
         //Before update
         //System.out.println(word);
