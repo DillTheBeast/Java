@@ -4,10 +4,11 @@ public class Encryption {
         Scanner Scan = new Scanner(System.in);
         System.out.println("Choose a word or message for me to encrypt.");
         String input = Scan.nextLine();
+        int idx = 0;
         System.out.println("Choose a key.");
         int input2 = Scan.nextInt();
-        int idx = 0;
         System.out.println(Ceaser(input, idx, input2));
+        
         //Alphabet encryption and decoder
         /*
         System.out.println(alphabet(input, idx));
@@ -15,9 +16,8 @@ public class Encryption {
         System.out.println(alphabetdecoder(encrypted));
         */
     }
-
-    //Alphabet encryption and decoder
 /*
+    //Alphabet encryption and decoder
     public static String alphabet(String input, int idx) {
         for(int a = 0; a < input.length(); a++) {
             System.out.print(input.charAt(idx) + 0 + " ");
@@ -35,7 +35,7 @@ public class Encryption {
         System.out.println(decoded);
         return "";
     }
-    */
+*/
     public static String Ceaser(String input, int idx, int input2) {
         int arr[] = new int [input.length()];
         char convert[] = new char[arr.length];
@@ -53,6 +53,7 @@ public class Encryption {
         System.out.println(newWord);
         return"";
     }
+    
     public static String railFence() {
         return "";
     }

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Encryption",
+            "request": "launch",
+            "mainClass": "Encryption",
+            "projectName": "Java_103ddc93"
+        },
+        {
+            "type": "java",
             "name": "Launch SubTest",
             "request": "launch",
             "mainClass": "SubTest",
