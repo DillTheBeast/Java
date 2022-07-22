@@ -12,9 +12,11 @@ public class Encryption {
         int key = Scan.nextInt();
         */
         //Only for Beufort
+        /* 
         System.out.println("Choose a keyword to help cypher your word");
         String bKey = Scan.nextLine();
-        System.out.println(vigenere(input, bKey, idx));
+        //System.out.println(vigenere(input, bKey, idx));
+        */
         //Alphabet encryption and decoder
         /*
         System.out.println(alphabet(input, idx));
@@ -117,6 +119,7 @@ public class Encryption {
         
     }
     */
+    /* 
     public static String vigenere(String input, String bKey, int idx) {
         int idx2 = idx;
         char keyStream[] = new char[input.length()];
@@ -141,4 +144,5 @@ public class Encryption {
         }
         return "";
     }
+    */
 }
