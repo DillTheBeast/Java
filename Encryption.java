@@ -6,9 +6,9 @@ public class Encryption {
         Scanner Scan = new Scanner(System.in);
         System.out.println("Choose a word or message for me to encrypt.");
         String input = Scan.nextLine();
-        System.out.println("Choose a key.");
-        int input2 = Scan.nextInt();
-        System.out.println(Ceaser(input, idx, input2));
+        //System.out.println("Choose a key.");
+        //int key = Scan.nextInt();
+        //System.out.println(vigenere(input, key, idx));
         
         //Only used for railFence
         /*
@@ -16,11 +16,11 @@ public class Encryption {
         int key = Scan.nextInt();
         */
         //Only for Beufort
-        /* 
+        
         System.out.println("Choose a keyword to help cypher your word");
         String bKey = Scan.nextLine();
-        //System.out.println(vigenere(input, bKey, idx));
-        */
+        System.out.println(vigenere(input, bKey, idx));
+        
 
         //Alphabet encryption and decoder
         /*
@@ -28,16 +28,17 @@ public class Encryption {
         int encrypted[] = {67, 97, 110, 32, 121, 111, 117, 32, 115, 101, 101, 32, 116, 104, 105, 115, 63};
         System.out.println(alphabetdecoder(encrypted));
         */
+        
     }
-/*
+
     //Alphabet encryption and decoder
-    public static String alphabet(String input, int idx) {
+    public static String alphabet(String input) {
         for(int a = 0; a < input.length(); a++) {
-            System.out.print(input.charAt(idx) + 0 + " ");
-            idx++;
+            System.out.print(input.charAt(a) + 0 + " ");
         }  
         return "";
     }
+    
     public static String alphabetdecoder(int encrypted[]) {
         char[] convertedChar = new char[encrypted.length];
         String decoded = "";
@@ -48,11 +49,10 @@ public class Encryption {
         System.out.println(decoded);
         return "";
     }
-*/
 
-    /*
+
+    
     public static String Ceaser(String input, int idx, int key) {
->>>>>>> a8b891bf91088148bfd3fcf1c30960d65ba0cbc1
         int arr[] = new int [input.length()];
         char convert[] = new char[arr.length];
         String newWord = "";
@@ -69,8 +69,6 @@ public class Encryption {
         return"";
     }
     
-    */
-    /*
     public static String railFence(String input, int key, int idx) {
         ArrayList<ArrayList<Character>> al = new ArrayList<ArrayList<Character>>(key); 
         int position;
@@ -87,30 +85,21 @@ public class Encryption {
             letter = input.charAt(i);
             position = n % key;
             al.get(position).add(letter);
-            System.out.println(n);
 
             if(isGoingUp == false) {
-                n--;
-                System.out.println("Test1");
+                n--; 
             }
 
             if(isGoingUp == true) {
                 n++;
-                System.out.println("Test2");
             }
             if(n == key-1) {
                 isGoingUp = false;
-                System.out.println("Test3");
             }
 
             if(n == 0) {
                 isGoingUp = true;
-                System.out.println("Test4");
-            }
-            
-            
-            
-            
+            } 
 
             //System.out.println(al.get(position).toString());
         }
@@ -125,8 +114,7 @@ public class Encryption {
     public static void print(ArrayList<ArrayList<Character>> al) {
         
     }
-    */
-    /* 
+ 
     public static String vigenere(String input, String bKey, int idx) {
         int idx2 = idx;
         char keyStream[] = new char[input.length()];
@@ -151,5 +139,5 @@ public class Encryption {
         }
         return "";
     }
-    */
+    
 }
