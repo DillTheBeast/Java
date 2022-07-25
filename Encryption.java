@@ -6,9 +6,9 @@ public class Encryption {
         Scanner Scan = new Scanner(System.in);
         System.out.println("Choose a word or message for me to encrypt.");
         String input = Scan.nextLine();
-        //System.out.println("Choose a key.");
-        //int key = Scan.nextInt();
-        //System.out.println(vigenere(input, key, idx));
+        System.out.println("Choose a key.");
+        int key = Scan.nextInt();
+        System.out.println(Ceaser(input, key));
         
         //Only used for railFence
         /*
@@ -16,10 +16,11 @@ public class Encryption {
         int key = Scan.nextInt();
         */
         //Only for Beufort
-        
+        /*
         System.out.println("Choose a keyword to help cypher your word");
         String bKey = Scan.nextLine();
         System.out.println(vigenere(input, bKey, idx));
+        */
         
 
         //Alphabet encryption and decoder
@@ -32,12 +33,14 @@ public class Encryption {
     }
 
     //Alphabet encryption and decoder
+    /*
     public static String alphabet(String input) {
         for(int a = 0; a < input.length(); a++) {
             System.out.print(input.charAt(a) + 0 + " ");
         }  
         return "";
     }
+    */
     
     public static String alphabetdecoder(int encrypted[]) {
         char[] convertedChar = new char[encrypted.length];
@@ -52,14 +55,14 @@ public class Encryption {
 
 
     
-    public static String Ceaser(String input, int idx, int key) {
+    public static String Ceaser(String input, int key) {
+        input = input.toUpperCase();
         int arr[] = new int [input.length()];
         char convert[] = new char[arr.length];
         String newWord = "";
             for(int a = 0; a < input.length(); a++) {
-                arr[a] = (input.charAt(idx) + key); 
-                arr[a] = ((arr[a] - 64) + key) % 26 + 64;
-                idx++;
+                arr[a] = (input.charAt(a) + key); 
+                arr[a] = (arr[a] - 64) % 26 + 64;
             }
             for(int b = 0; b < input.length(); b++) {
                 convert[b] = (char)(arr[b]);
