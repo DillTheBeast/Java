@@ -30,7 +30,7 @@ public class PasswordGenerator {
                 }
                 else if(i < input.length()/2) {
                     if(i == input.length()/2+1) {
-                        String test = Character.toString(input.charAt(i));
+                        char test = 
                         //String test1 = ""+test.toUpperCase();
                         sb2.append(test.toUpperCase());
                     }
