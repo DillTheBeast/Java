@@ -98,7 +98,6 @@ public class PasswordGenerator {
         }
         else {
             middle = input.charAt(input.length()/2);
-            System.out.println(middle);
 
             for(int i = 0; i < input.length(); i++) {
                 if(i > input.length()/2) {
