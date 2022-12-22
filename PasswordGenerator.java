@@ -25,7 +25,7 @@ public class PasswordGenerator {
             middle2 = input.charAt(input.length()/2);
 
             for(int l = 0; l < input.length(); l++) {
-                if(l == input.length()/2+1 || l == input.length()/2) {
+                if(l == input.length()/2-1 || l == input.length()/2) {
                     middle = input.charAt(l);
 
                     if(middle2 == 'a' || middle2 == 'b' || middle2 == 'c') {
@@ -100,7 +100,7 @@ public class PasswordGenerator {
             middle = input.charAt(input.length()/2);
 
             for(int i = 0; i < input.length(); i++) {
-                if(i > input.length()/2) {
+                if(i > input.length()/2-1) {
                     sb1.append(input.charAt(i));
                 }
                 else if(i < input.length()/2) {
