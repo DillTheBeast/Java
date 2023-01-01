@@ -6,10 +6,17 @@
     "configurations": [
         {
             "type": "java",
+
             "name": "Launch Monopoly",
             "request": "launch",
             "mainClass": "Monopoly",
             "projectName": "Java_fe62be9"
+
+            ,"name": "Launch PasswordGenerator",
+            "request": "launch",
+            "mainClass": "PasswordGenerator",
+            "projectName": "Java_103ddc93"
+
         },
         {
             "type": "java",
