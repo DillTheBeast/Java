@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Monopoly",
+            "request": "launch",
+            "mainClass": "Monopoly",
+            "projectName": "Java_fe62be9"
+        },
+        {
+            "type": "java",
             "name": "Launch HelloWorld",
             "request": "launch",
             "mainClass": "HelloWorld",
