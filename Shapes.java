@@ -39,7 +39,7 @@ public class Shapes {
 //  Upside down triangle
 /*
     for (int y = 0; y < 5; y++) {
-        for(int x = 5; x > y ;x-- ) {
+        for(int x = 5; x > y ;x--) {
             System.out.print("x ");
         }
         System.out.println(" ");
@@ -47,7 +47,7 @@ public class Shapes {
 */
 
 //Equilateral Triangle
-/*
+///*
     for (int y = 0; y < 5; y++) {
         for(int x = 5; x > y ;x-- ) {
             System.out.print(" ");
@@ -57,7 +57,7 @@ public class Shapes {
         }
     System.out.println(" ");
     }
-*/
+//*/
 
 //Diamond
 /*
