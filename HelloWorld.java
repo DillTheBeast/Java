@@ -1,6 +1,12 @@
 public class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        int c = 10;
+        
+
+        while(c!=-1) {
+            System.out.println(c);
+            c--;
+        }
     }
 
 }
