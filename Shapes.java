@@ -108,7 +108,7 @@ public class Shapes {
         */
 
         //Hollow Diamond asking how many blocks you want it
-        /*
+        
         Scanner Scan = new Scanner(System.in);
         System.out.println("How big do you want to make the diamond?");
         int input;
@@ -130,7 +130,7 @@ public class Shapes {
         for (int y = 0; y < input; y++) {
             for(int x = 0; x < y + 1;x++ ) {
                 System.out.print(" ");
-            }a
+            }
             for(int z = input; z > y ;z-- ) {
                 if(z == input || z == y + 1) {
                     System.out.print("x ");
@@ -141,7 +141,7 @@ public class Shapes {
             }
             System.out.println(" ");
         }
-        */
+        
         //t
         /*
         for(int i = 0; i < 2; i++) {
