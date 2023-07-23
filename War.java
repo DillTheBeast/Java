@@ -1,5 +1,3 @@
-import java.sql.Array;
-import java.util.Arrays;
 import java.util.Scanner;
 public class War {
     public static String input;
