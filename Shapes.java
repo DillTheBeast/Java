@@ -60,7 +60,7 @@ public class Shapes {
         */
 
         //Diamond
-        
+        /*
         for (int y = 0; y < 5; y++) {
             for(int x = 5; x > y ;x-- ) {
                 System.out.print(" ");
@@ -79,7 +79,7 @@ public class Shapes {
         }
         System.out.println(" ");
         }
-        
+        */
 
         //Diamond asking you how many blocks you want it
         /*
@@ -161,5 +161,10 @@ public class Shapes {
             System.out.println("x");
         }
         */
+
+
+
+        //Spider man thing
+        //Height = 9
     }
 }
