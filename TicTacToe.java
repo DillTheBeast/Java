@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class TicTacToe {
     public static void main(String[] args) {
         //Declares all variables
-            Scanner Scan = new Scanner(System.in);
+        Scanner Scan = new Scanner(System.in);
         String[][] Board = new String[3][3];
         Boolean Winner = false;
         Boolean xturn = true;
@@ -15,12 +15,12 @@ public class TicTacToe {
         }
         //Next part checks for winner
         while(Winner == false) {
-                    if(xturn == true) {
-                        System.out.println("It is X's turn");
-                    }
-                    else {
-                        System.out.println("It is O's turn");
-                    }
+            if(xturn == true) {
+                System.out.println("It is X's turn");
+            }
+            else {
+                System.out.println("It is O's turn");
+            }
             int xinput = Scan.nextInt();
             int yinput = Scan.nextInt();
             //Next part checks for who's turn it is
