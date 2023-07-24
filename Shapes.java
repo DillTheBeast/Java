@@ -47,7 +47,7 @@ public class Shapes {
         */
 
         //Equilateral Triangle
-        
+        /*
         for (int y = 0; y < 5; y++) {
             for(int x = 5; x > y ;x-- ) {
                 System.out.print(" ");
@@ -57,10 +57,10 @@ public class Shapes {
             }
             System.out.println(" ");
         }
-        
+        */
 
         //Diamond
-        /*
+        
         for (int y = 0; y < 5; y++) {
             for(int x = 5; x > y ;x-- ) {
                 System.out.print(" ");
@@ -79,7 +79,7 @@ public class Shapes {
         }
         System.out.println(" ");
         }
-        */
+        
 
         //Diamond asking you how many blocks you want it
         /*
@@ -108,7 +108,7 @@ public class Shapes {
         */
 
         //Hollow Diamond asking how many blocks you want it
-        
+        /*
         Scanner Scan = new Scanner(System.in);
         System.out.println("How big do you want to make the diamond?");
         int input;
