@@ -27,7 +27,8 @@ public class LinkedList {
             curr = curr.next;
             currIDX++;
         }
-        curr.next = curr.next.next;
+        curr.next = null;
+        curr = curr.next.next;
 
     }
 }
