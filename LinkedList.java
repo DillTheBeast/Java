@@ -51,4 +51,17 @@ public class LinkedList {
         }
         curr.next = newNode;
     }
+
+    public boolean spotChecker(int targetIDX) {
+        curr = head;
+        int currIDX = 0;
+        while(currIDX < targetIDX - 1) {
+            curr = curr.next;
+            currIDX++;
+        }
+        if(curr.next != null) {
+            return false;
+        }
+        return true;
+    }
 }
