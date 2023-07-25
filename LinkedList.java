@@ -9,26 +9,34 @@ public class LinkedList {
 
     }
 
+    public void printList() {
+        while(curr.next != null) {
+            System.out.println(curr);
+        }
+    }
+
     public void add(Node newNode, int targetIDX) {
-        curr = head;
         int currIDX = 0;
         while(currIDX < targetIDX) {
             curr = curr.next;
             currIDX++;
         }
+        curr = head;
         newNode.next = curr.next;
         curr = newNode;
     }
     
     public void delete(Node deleteNode, int targetIDX) {
         curr = head;
+        Node placeHolder;
         int currIDX = 0;
         while(currIDX < targetIDX - 1) {
             curr = curr.next;
             currIDX++;
         }
-        curr.next = null;
-        curr = curr.next.next;
+        placeHolder = curr.next.next;
+        curr.next.next = null;
+        curr.next = placeHolder;
 
     }
 }
