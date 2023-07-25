@@ -10,20 +10,23 @@ public class LinkedList {
     }
 
     public void printList() {
+        curr = head;
         while(curr.next != null) {
             System.out.println(curr);
+            curr = curr.next;
         }
+        System.out.println(curr);
     }
 
     public void add(Node newNode, int targetIDX) {
+        curr = head;
         int currIDX = 0;
-        while(currIDX < targetIDX) {
+        while(currIDX < targetIDX -1 ) {
             curr = curr.next;
             currIDX++;
         }
-        curr = head;
         newNode.next = curr.next;
-        curr = newNode;
+        curr.next = newNode;
     }
     
     public void delete(Node deleteNode, int targetIDX) {
@@ -38,5 +41,14 @@ public class LinkedList {
         curr.next.next = null;
         curr.next = placeHolder;
 
+    }
+
+    public void append(Node newNode) {
+        curr = head;
+        
+        while(curr.next != null) {
+            curr = curr.next;
+        }
+        curr.next = newNode;
     }
 }
