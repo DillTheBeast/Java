@@ -12,6 +12,3 @@ public class Node {
     }
 
 }
-
-public class LinkedList {
-}
