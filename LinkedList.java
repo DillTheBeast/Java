@@ -1,7 +1,7 @@
 public class LinkedList {
 
     //Stack = Last on First off
-    //Queue = First on Last off
+    //Queue = First on First off
     Node head;
     Node curr;
     Node placeHolder;
@@ -66,5 +66,21 @@ public class LinkedList {
             return false;
         }
         return true;
+    }
+
+    public void stack() {
+        curr = head;
+        while(curr.next != null) {
+            curr = curr.next;
+        }
+        curr = null;
+    }
+
+    public void queue() {
+        curr = head;
+        head = curr.next;
+        placeHolder = curr.next;
+        curr.next = null;
+        curr.next.next = placeHolder;
     }
 }

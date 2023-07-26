@@ -6,8 +6,11 @@ public class PlayList {
         Scanner Scan = new Scanner(System.in);
         boolean done = false;
         boolean done1 = false;
+        boolean chose = false;
+        String finalAns;
         String songAnswer;
         String doneAnswer;
+        int deleteAnswer;
         String certainSpotAnswer;
         int certainSpot;
         LinkedList playList = new LinkedList(new Node("PlayList"));
@@ -17,10 +20,22 @@ public class PlayList {
             songAnswer = Scan.nextLine();
             if(songAnswer.equals("d")) {
                 //Need to do this
-                System.out.println("What spot do you want to delete?");
-                certainSpot = Scan.nextInt();
-                if(playList.spotChecker(certainSpot)) {
-
+                while(chose == false) {
+                    System.out.println("If you would like to take the first song off, type 1. If you would like to take the last song off, type 2. Or if you would like to delete a certain spot click 3.");
+                    deleteAnswer = Scan.nextInt();
+                    if(deleteAnswer == 1) {
+                        playList.queue();
+                    }
+                    else if(deleteAnswer == 2) {
+                        playList.stack();
+                    }
+                    else if (deleteAnswer == 3) {
+                        System.out.println("Which spot do you want to delete");
+                        certainSpot = Scan.nextInt();
+                    }
+                    else {
+                        System.out.println("That is not an option");
+                    }
                 }
             }
             else {
@@ -57,6 +72,14 @@ public class PlayList {
                         System.out.println("That is not an option");
                     }
                 }
+            }
+            System.out.println("Would you like to add something else to the playlist? Type yes or no");
+            finalAns = Scan.nextLine();
+            if(finalAns.equals("yes")) {
+
+            }
+            else if(finalAns.equals("no")) {
+                
             }
         }
 
