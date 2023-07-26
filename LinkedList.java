@@ -6,6 +6,8 @@ public class LinkedList {
     Node curr;
     Node placeHolder;
 
+    
+
     public LinkedList(Node first) {
         this.head = first;
         curr = head;
@@ -32,7 +34,7 @@ public class LinkedList {
         curr.next = newNode;
     }
     
-    public void delete(Node deleteNode, int targetIDX) {
+    public void delete(int targetIDX) {
         curr = head;
         Node placeHolder;
         int currIDX = 0;
@@ -43,7 +45,6 @@ public class LinkedList {
         placeHolder = curr.next.next;
         curr.next.next = null;
         curr.next = placeHolder;
-
     }
 
     public void append(Node newNode) {

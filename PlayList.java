@@ -32,6 +32,10 @@ public class PlayList {
                     else if (deleteAnswer == 3) {
                         System.out.println("Which spot do you want to delete");
                         certainSpot = Scan.nextInt();
+                        playList.delete(certainSpot);
+                        System.out.println("Your new playlist is: ");
+                        playList.printList();
+                        chose = true;
                     }
                     else {
                         System.out.println("That is not an option");
@@ -76,10 +80,12 @@ public class PlayList {
             System.out.println("Would you like to add something else to the playlist? Type yes or no");
             finalAns = Scan.nextLine();
             if(finalAns.equals("yes")) {
-
+                done = false;
+                done1 = false;
+                chose = false;
             }
             else if(finalAns.equals("no")) {
-                
+                done = true;
             }
         }
 
