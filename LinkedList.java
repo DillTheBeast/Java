@@ -1,4 +1,7 @@
 public class LinkedList {
+
+    //Stack = Last on First off
+    //Queue = First on Last off
     Node head;
     Node curr;
     Node placeHolder;
