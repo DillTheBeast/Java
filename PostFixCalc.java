@@ -22,22 +22,48 @@ public class PostFixCalc {
                         num2 = stack.pop();
                         num1 = stack.pop();
                         ans = num1 + num2;
+                        first = false;
+                    }
+                    else {
+                        num2 = stack.pop();
+                        ans = ans + num2;
                     }
                 }
                 else if(equationArray[i].equals("-")) {
-                    num2 = stack.pop();
-                    num1 = stack.pop();
-                    ans = num1 - num2;
+                    if(first == true) {
+                        num2 = stack.pop();
+                        num1 = stack.pop();
+                        ans = num1 - num2;
+                        first = false;
+                    }
+                    else {
+                        num2 = stack.pop();
+                        ans = ans - num2;
+                    }
                 }
                 else if(equationArray[i].equals("*")) {
-                    num2 = stack.pop();
-                    num1 = stack.pop();
-                    ans = num1 * num2;
+                    if(first == true) {
+                        num2 = stack.pop();
+                        num1 = stack.pop();
+                        ans = num1 * num2;
+                        first = false;
+                    }
+                    else {
+                        num2 = stack.pop();
+                        ans = ans * num2;
+                    }
                 }
                 else if(equationArray[i].equals("/")) {
-                    num2 = stack.pop();
-                    num1 = stack.pop();
-                    ans = num1 / num2;
+                    if(first == true) {
+                        num2 = stack.pop();
+                        num1 = stack.pop();
+                        ans = num1 / num2;
+                        first = false;
+                    }
+                    else {
+                        num2 = stack.pop();
+                        ans = ans / num2;
+                    }
                 }
                 else {
                     try {
