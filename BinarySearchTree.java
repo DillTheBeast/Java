@@ -23,7 +23,7 @@ public class BinarySearchTree {
         rootNode = null;
     }
 
-    public void printTree(BinaryNode direction) {
+    public void printTree(BinaryNode node) {
         if(depth == -1) {
             System.out.println("There is nothing to print");
         }
@@ -31,35 +31,17 @@ public class BinarySearchTree {
             System.out.println(rootNode.value);
         }
         else{
-            // if(placeHolder.left != null && direction == placeHolder.left) {
-            //     placeHolder = placeHolder.left;
-            //     printTree(placeHolder.left);
-            // }
-            // else {
-            //     System.out.println(placeHolder);
-            // }
-
-            // if(placeHolder.right != null && direction == placeHolder.right) {
-            //     placeHolder = placeHolder.right;
-            //     printTree(placeHolder.right);
-            // }
-            // else {
-            //     System.out.println(placeHolder);
-            // }
-
-            while(placeHolder.left != null) {
-                System.out.println(placeHolder.value);
-                placeHolder = placeHolder.left;
-                printTree(placeHolder);
-            }
-            //System.out.println(placeHolder.value);
-            while(placeHolder.right != null) {
-                placeHolder = placeHolder.right;
-                printTree(placeHolder);
-                System.out.println(placeHolder.value);
-            }
-            //System.out.println(placeHolder.value);
-
+            if (node == null)
+            return;
+ 
+        // First recur on left child
+        printTree(node.left);
+ 
+        // Then print the data of node
+        System.out.print(node.value + " ");
+ 
+        // Now recur on right child
+        printTree(node.right);
         }
         
     }
