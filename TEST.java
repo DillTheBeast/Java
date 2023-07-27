@@ -47,5 +47,8 @@ public class TEST {
     // stack.pop();
     // System.out.println("Top element: " + stack.peak());
     */
+
+    BinarySearchTree tree = new BinarySearchTree();
+    tree.Add(5);
     }
 }
