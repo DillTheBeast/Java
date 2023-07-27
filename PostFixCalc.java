@@ -13,13 +13,16 @@ public class PostFixCalc {
         int num1;
         int num2;
         int ans = 0;
+        boolean first = true;
 
         for(int i = 0; i < equationArray.length; i++) {
             try {
                 if(equationArray[i].equals("+")) {
-                num2 = stack.pop();
-                num1 = stack.pop();
-                ans = num1 + num2;
+                    if(first == true) {
+                        num2 = stack.pop();
+                        num1 = stack.pop();
+                        ans = num1 + num2;
+                    }
                 }
                 else if(equationArray[i].equals("-")) {
                     num2 = stack.pop();
