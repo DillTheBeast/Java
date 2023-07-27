@@ -23,7 +23,7 @@ public class BinarySearchTree {
         rootNode = null;
     }
 
-    public void printTree() {
+    public void printTree(BinaryNode direction) {
         if(depth == -1) {
             System.out.println("There is nothing to print");
         }
@@ -31,21 +31,33 @@ public class BinarySearchTree {
             System.out.println(rootNode.value);
         }
         else{
-            if(placeHolder.left != null) {
-                placeHolder = placeHolder.left;
-                printTree();
-            }
-            else {
-                System.out.println(placeHolder);
-            }
+            // if(placeHolder.left != null && direction == placeHolder.left) {
+            //     placeHolder = placeHolder.left;
+            //     printTree(placeHolder.left);
+            // }
+            // else {
+            //     System.out.println(placeHolder);
+            // }
 
-            if(placeHolder.right != null) {
+            // if(placeHolder.right != null && direction == placeHolder.right) {
+            //     placeHolder = placeHolder.right;
+            //     printTree(placeHolder.right);
+            // }
+            // else {
+            //     System.out.println(placeHolder);
+            // }
+
+            while(placeHolder.left != null) {
+                placeHolder = placeHolder.left;
+                printTree(placeHolder);
+            }
+            //System.out.println(placeHolder.value);
+            while(placeHolder.right != null) {
                 placeHolder = placeHolder.right;
-                printTree();
+                printTree(placeHolder);
             }
-            else {
-                System.out.println(placeHolder);
-            }
+            System.out.println(placeHolder.value);
+
         }
         
     }
