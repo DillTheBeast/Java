@@ -1,55 +1,89 @@
 public class BinarySearchTree {
+    class BinaryNode {
+        int value;
+        BinaryNode left;
+        BinaryNode right;
+    
+        public BinaryNode(int value){
+            this.value = value;
+        }
+        
+    
+        public String toString(){
+            return String.valueOf(value);
+        }
+    }
     BinaryNode rootNode;
-    int firstNode;
+    int depth;
     BinaryNode placeHolder;
     boolean leftAvailable = true;
-    BinaryNode last;
     
-    public BinarySearchTree(/*BinaryNode rootNode*/) {
+    public BinarySearchTree() {
+        depth = -1;
+        rootNode = null;
+    }
+
+    public void printTree() {
+        if(depth == -1) {
+            System.out.println("There is nothing to print");
+        }
+        else if(depth == 0){
+            System.out.println(rootNode.value);
+        }
+        else{
+            if(placeHolder.left != null) {
+                placeHolder = placeHolder.left;
+                printTree();
+            }
+            else {
+                System.out.println(placeHolder);
+            }
+
+            if(placeHolder.right != null) {
+                placeHolder = placeHolder.right;
+                printTree();
+            }
+            else {
+                System.out.println(placeHolder);
+            }
+        }
         
     }
 
-    public void printTree(BinaryNode node) {
-        if(firstNode == 0) {
-            System.out.println("There is nothing to print");
-        }
-        printTree(node.left);
-        System.out.println(node.value);
-        printTree(node.right);
-    }
-
     public void Find(BinaryNode num) {
-        if(firstNode == 0) {
+        if(depth == -1) {
             throw new IllegalStateException("The tree is empty right now");
         }
     }
 
-    public void Add(BinaryNode num) {
-        if(firstNode == 0) {
-            num = rootNode;
+    public void add(int num) {
+        if(depth == -1) {
+            BinaryNode root = new BinaryNode(num);
+            rootNode = root;
             placeHolder = rootNode;
-            firstNode++;
         }
         else {
-            if(num.value < placeHolder.value) {
+            if(num < placeHolder.value) {
                 //Need to move left
                 if(placeHolder.left != null) {
                     placeHolder = placeHolder.left;
-                    Add(num);
+                    add(num);
                 }
                 else {
-                    placeHolder.left = num;
+                    BinaryNode left = new BinaryNode(num);
+                    placeHolder.left = left;
                     placeHolder = rootNode;
                 }
             }
-            else if(num.value > rootNode.value) {
+            else if(num > placeHolder.value) {
                 //Need to move right
                 if(placeHolder.right != null) {
                     placeHolder = placeHolder.right;
-                    Add(num);
+                    add(num);
                 }
                 else {
-                    placeHolder.right = num;
+                    BinaryNode right = new BinaryNode(num);
+                    placeHolder.right = right;
                     placeHolder = rootNode;
                 }
             }
@@ -58,15 +92,16 @@ public class BinarySearchTree {
                 //Going to move left but really my choice
                 if(placeHolder.left != null) {
                     placeHolder = placeHolder.left;
-                    Add(num);
+                    add(num);
                 }
                 else {
-                    placeHolder.left = num;
-                    num.right = placeHolder;
+                    BinaryNode middle = new BinaryNode(num);
+                    placeHolder.left = middle;
                     placeHolder = rootNode;
                 }
             }
         }
+        depth++;
 
     }
 
