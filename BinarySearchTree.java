@@ -48,6 +48,7 @@ public class BinarySearchTree {
             // }
 
             while(placeHolder.left != null) {
+                System.out.println(placeHolder.value);
                 placeHolder = placeHolder.left;
                 printTree(placeHolder);
             }
@@ -55,8 +56,9 @@ public class BinarySearchTree {
             while(placeHolder.right != null) {
                 placeHolder = placeHolder.right;
                 printTree(placeHolder);
+                System.out.println(placeHolder.value);
             }
-            System.out.println(placeHolder.value);
+            //System.out.println(placeHolder.value);
 
         }
         
