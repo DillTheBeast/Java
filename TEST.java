@@ -14,5 +14,38 @@ public class TEST {
     myList.printList();
     */
     //Only will work if value in Node is changed back to int
+
+    /* 
+    Queue queue = new Queue(3);
+    queue.enqueue(3);
+    queue.enqueue(4);
+    queue.enqueue(2);
+    queue.printQueue();
+    System.out.println();
+    queue.dequeue();
+    queue.dequeue();
+    queue.enqueue(5);
+    queue.printQueue();
+    */
+    /*
+    Stack stack = new Stack(3);
+    stack.push(3);
+    stack.push(4);
+    stack.push(2);
+    stack.pop();
+    stack.push(5);
+    int thing = stack.peak();
+    stack.printStack();
+    
+    System.out.println("thing " + thing);
+    
+    //correct exception thrown
+    //stack.push(3);
+    //stack.pop();
+
+    // System.out.println("top element: " + stack.peak());
+    // stack.pop();
+    // System.out.println("Top element: " + stack.peak());
+    */
     }
 }
