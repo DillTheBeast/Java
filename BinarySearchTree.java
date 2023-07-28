@@ -113,7 +113,7 @@ public class BinarySearchTree {
                 }
                 else {
                     BinaryNode right = new BinaryNode(num);
-                    placeHolder.right = ;
+                    placeHolder.right = null;
                     placeHolder = rootNode;
                 }
     }
