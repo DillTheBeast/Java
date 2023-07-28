@@ -49,13 +49,14 @@ public class TEST {
     */
 
     BinarySearchTree tree = new BinarySearchTree();
-    tree.add(5);
-    tree.add(3);
-    tree.add(8);
-    tree.add(2);
-    tree.add(7);
-    tree.add(9);
-    tree.add(4);
+    tree.add(5, tree.rootNode);
+    tree.add(3, tree.rootNode);
+    tree.add(8, tree.rootNode);
+    tree.add(2, tree.rootNode);
+    tree.add(7, tree.rootNode);
+    tree.add(9, tree.rootNode);
+    tree.add(4, tree.rootNode);
+    //tree.rootNode = tree.remove(2, tree.rootNode);
     tree.printTree(tree.rootNode);
     }
 }

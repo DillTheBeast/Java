@@ -15,8 +15,8 @@ public class BinarySearchTree {
     }
     BinaryNode rootNode;
     int depth;
-    BinaryNode placeHolder;
-    boolean leftAvailable = true;
+    boolean leftempy = false;
+    boolean rightempty = false;
     
     public BinarySearchTree() {
         depth = -1;
@@ -43,48 +43,48 @@ public class BinarySearchTree {
         }
     }
 
-    public void add(int num) {
+    public void add(int num, BinaryNode node) {
         if(depth == -1) {
             BinaryNode root = new BinaryNode(num);
             rootNode = root;
-            placeHolder = rootNode;
+            node = rootNode;
         }
         else {
-            if(num < placeHolder.value) {
+            if(num < node.value) {
                 //Need to move left
-                if(placeHolder.left != null) {
-                    placeHolder = placeHolder.left;
-                    add(num);
+                if(node.left != null) {
+                    node = node.left;
+                    add(num, node);
                 }
                 else {
                     BinaryNode left = new BinaryNode(num);
-                    placeHolder.left = left;
-                    placeHolder = rootNode;
+                    node.left = left;
+                    node = rootNode;
                 }
             }
-            else if(num > placeHolder.value) {
+            else if(num > node.value) {
                 //Need to move right
-                if(placeHolder.right != null) {
-                    placeHolder = placeHolder.right;
-                    add(num);
+                if(node.right != null) {
+                    node = node.right;
+                    add(num, node);
                 }
                 else {
                     BinaryNode right = new BinaryNode(num);
-                    placeHolder.right = right;
-                    placeHolder = rootNode;
+                    node.right = right;
+                    node = rootNode;
                 }
             }
             else {
                 //Are the same
                 //Going to move left but really my choice
-                if(placeHolder.left != null) {
-                    placeHolder = placeHolder.left;
-                    add(num);
+                if(node.left != null) {
+                    node = node.left;
+                    add(num, node);
                 }
                 else {
                     BinaryNode middle = new BinaryNode(num);
-                    placeHolder.left = middle;
-                    placeHolder = rootNode;
+                    node.left = middle;
+                    node = rootNode;
                 }
             }
         }
@@ -92,32 +92,46 @@ public class BinarySearchTree {
 
     }
 
-    public void remove(int num) {
-        if(num <= placeHolder.value) {
-                //Need to move left
-                if(placeHolder.left.value != num) {
-                    placeHolder = placeHolder.left;
-                    remove(num);
+    public void remove(int num, BinaryNode node) {
+        if (node == null)
+            return;
+
+        if(num <= node.value) {
+                //Recurs to left and then returns what needs to be deleted
+                if(node.left.value != num) {
+                    node = node.left;
+                    remove(num, node);
                 }
                 else {
-                    BinaryNode left = new BinaryNode(num);
-                    placeHolder.left = left;
-                    placeHolder = rootNode;
+                    node = node.left;
                 }
             }
-            else if(num > placeHolder.value) {
-                //Need to move right
-                if(placeHolder.right.value != num) {
-                    placeHolder = placeHolder.right;
-                    remove(num);
+        else if(num > node.value) {
+                //Same thing for right
+                if(node.left.value != num) {
+                    node = node.right;
+                    remove(num, node);
                 }
                 else {
-                    BinaryNode right = new BinaryNode(num);
-                    placeHolder.right = null;
-                    placeHolder = rootNode;
-                }
+                    node = node.right;
+                }     
+        }
+
+        //Only get here once what needs to be deleted is found
+        if (node.left == null && node.right == null) {
+            //No childs meaning it can just be deleted
+            node = null;
+        }
+        else if(node.left == null) {
+            //Only has a child to the right
+        }
+        else if(node.right == null) {
+            //Only has a child to the left
+
+        }
+        else {
+            //Has children to the right and left
+        }
     }
-
-
-
+    
 }
