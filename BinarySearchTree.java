@@ -126,6 +126,8 @@ public class BinarySearchTree {
         }
         else if(node.left != null) {
             //Only has a child to the left
+            node = node.left;
+            remove(num, node);
         }
         else if(node.right != null) {
             //Only has a child to the right
@@ -137,5 +139,7 @@ public class BinarySearchTree {
     }
 
     //Need to make an array for everything being cut off and then just add those numbers back to the tree
+
+    public void remove() {
     
 }
