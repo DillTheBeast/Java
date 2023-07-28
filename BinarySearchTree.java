@@ -24,14 +24,7 @@ public class BinarySearchTree {
     }
 
     public void printTree(BinaryNode node) {
-        if(depth == -1) {
-            System.out.println("There is nothing to print");
-        }
-        else if(depth == 0){
-            System.out.println(rootNode.value);
-        }
-        else{
-            if (node == null)
+        if (node == null)
             return;
  
         // First recur on left child
@@ -41,12 +34,10 @@ public class BinarySearchTree {
         System.out.print(node.value + " ");
  
         // Now recur on right child
-        printTree(node.right);
-        }
-        
+        printTree(node.right); 
     }
 
-    public void Find(BinaryNode num) {
+    public void Find(int num) {
         if(depth == -1) {
             throw new IllegalStateException("The tree is empty right now");
         }
@@ -100,5 +91,33 @@ public class BinarySearchTree {
         depth++;
 
     }
+
+    public void remove(int num) {
+        if(num <= placeHolder.value) {
+                //Need to move left
+                if(placeHolder.left.value != num) {
+                    placeHolder = placeHolder.left;
+                    remove(num);
+                }
+                else {
+                    BinaryNode left = new BinaryNode(num);
+                    placeHolder.left = left;
+                    placeHolder = rootNode;
+                }
+            }
+            else if(num > placeHolder.value) {
+                //Need to move right
+                if(placeHolder.right.value != num) {
+                    placeHolder = placeHolder.right;
+                    remove(num);
+                }
+                else {
+                    BinaryNode right = new BinaryNode(num);
+                    placeHolder.right = ;
+                    placeHolder = rootNode;
+                }
+    }
+
+
 
 }
