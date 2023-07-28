@@ -120,7 +120,9 @@ public class BinarySearchTree {
         //Only get here once what needs to be deleted is found
         if (node.left == null && node.right == null) {
             //No childs meaning it can just be deleted
+            System.out.println(node);
             node = null;
+            System.out.println(node);
         }
         else if(node.left == null) {
             //Only has a child to the right

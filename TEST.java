@@ -52,11 +52,11 @@ public class TEST {
     tree.add(5, tree.rootNode);
     tree.add(3, tree.rootNode);
     tree.add(8, tree.rootNode);
-    tree.add(2, tree.rootNode);
     tree.add(7, tree.rootNode);
     tree.add(9, tree.rootNode);
     tree.add(4, tree.rootNode);
-    //tree.rootNode = tree.remove(2, tree.rootNode);
+    tree.add(2, tree.rootNode);
+    tree.remove(2, tree.rootNode);
     tree.printTree(tree.rootNode);
     }
 }
