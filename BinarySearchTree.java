@@ -96,7 +96,7 @@ public class BinarySearchTree {
         if (node == null)
             return;
 
-        if(num <= node.value) {
+        if(num < node.value) {
                 //Recurs to left and then returns what needs to be deleted
                 if(node.left.value != num) {
                     node = node.left;
@@ -124,16 +124,18 @@ public class BinarySearchTree {
             node = null;
             System.out.println(node);
         }
-        else if(node.left == null) {
-            //Only has a child to the right
-        }
-        else if(node.right == null) {
+        else if(node.left != null) {
             //Only has a child to the left
+        }
+        else if(node.right != null) {
+            //Only has a child to the right
 
         }
         else {
             //Has children to the right and left
         }
     }
+
+    //Need to make an array for everything being cut off and then just add those numbers back to the tree
     
 }
