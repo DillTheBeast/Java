@@ -1,22 +1,7 @@
 public class BinarySearchTree {
-    class BinaryNode {
-        int value;
-        BinaryNode left;
-        BinaryNode right;
-    
-        public BinaryNode(int value){
-            this.value = value;
-        }
-        
-    
-        public String toString(){
-            return String.valueOf(value);
-        }
-    }
     BinaryNode rootNode;
     int depth;
-    boolean leftempy = false;
-    boolean rightempty = false;
+    boolean done = false;
     
     public BinarySearchTree() {
         depth = -1;
@@ -43,34 +28,34 @@ public class BinarySearchTree {
         }
     }
 
-    public void add(int num, BinaryNode node) {
+    public void add(BinaryNode newNode, BinaryNode node) {
         if(depth == -1) {
-            BinaryNode root = new BinaryNode(num);
-            rootNode = root;
+            // BinaryNode root = new BinaryNode(num);
+            rootNode = newNode;
             node = rootNode;
         }
         else {
-            if(num < node.value) {
+            if(newNode.value < node.value) {
                 //Need to move left
                 if(node.left != null) {
                     node = node.left;
-                    add(num, node);
+                    add(newNode, node);
                 }
                 else {
-                    BinaryNode left = new BinaryNode(num);
-                    node.left = left;
+                    //BinaryNode left = new BinaryNode(num);
+                    node = node.left;
                     node = rootNode;
                 }
             }
-            else if(num > node.value) {
+            else if(newNode.value > node.value) {
                 //Need to move right
                 if(node.right != null) {
                     node = node.right;
-                    add(num, node);
+                    add(newNode, node);
                 }
                 else {
-                    BinaryNode right = new BinaryNode(num);
-                    node.right = right;
+                    //BinaryNode right = new BinaryNode(num);
+                    node = node.right;
                     node = rootNode;
                 }
             }
@@ -79,11 +64,11 @@ public class BinarySearchTree {
                 //Going to move left but really my choice
                 if(node.left != null) {
                     node = node.left;
-                    add(num, node);
+                    add(newNode, node);
                 }
                 else {
-                    BinaryNode middle = new BinaryNode(num);
-                    node.left = middle;
+                    //BinaryNode middle = new BinaryNode(num);
+                    node = node.left;
                     node = rootNode;
                 }
             }
@@ -96,45 +81,72 @@ public class BinarySearchTree {
         if (node == null)
             return;
 
-        if(num < node.value) {
+        /*
+        if(num < node.value && node.left.value != num ) {
                 //Recurs to left and then returns what needs to be deleted
-                if(node.left.value != num) {
-                    node = node.left;
-                    remove(num, node);
+                node = node.left;
+                remove(num, node);
+            }
+        else if(num > node.value && node.right.value != num) {
+                //Same thing for right
+                node = node.right;
+                remove(num, node);
+                }
+        else{
+            //remove node
+            if(node.left.value == num) {
+                //Left node needs to be removed + no children
+                if(node.left.left == null && node.left.right == null) {
+                    node.left = null;
                 }
                 else {
-                    node = node.left;
+                    
                 }
             }
-        else if(num > node.value) {
-                //Same thing for right
-                if(node.left.value != num) {
-                    node = node.right;
-                    remove(num, node);
+            else if(node.right.value == num) {
+                //Right node needs to be removed + no children
+                if(node.right.left == null && node.right.right == null) {
+                    node.right = null;
                 }
                 else {
-                    node = node.right;
-                }     
+                    node.right = node.right.right;
+                }
+            }
+            */
+            if(num < node.value) {
+                //Needs to go left
+                remove(num, node.left);
+            }
+            else if(num > node.value) {
+                //Needs to go to right
+                remove(num, node.right);
+            }
+            else {
+                if(node.left == null && node.right == null) {
+                    
+                }
+                else if(node.right == null) {
+
+                }
+            }
+
         }
 
         //Only get here once what needs to be deleted is found
-        if (node.left == null && node.right == null) {
-            //No childs meaning it can just be deleted
-            System.out.println(node);
-            node = null;
-            System.out.println(node);
+        // if(done == true) {
+        //     if (node.left == null && node.right == null) {
+        //         //No childs meaning it can just be deleted
+        //         System.out.println(node);
+        //         node = null;
+        //         System.out.println(node);
+        //     }
+        //     else {
+        //         //Has children to the right and left
+        //         remove(num, node.left);
+        //         node = null;
+        //         remove(num, node.right);
+        //     }
         }
-        else if(node.left != null) {
-            //Only has a child to the left
-        }
-        else if(node.right != null) {
-            //Only has a child to the right
-
-        }
-        else {
-            //Has children to the right and left
-        }
-    }
 
     //Need to make an array for everything being cut off and then just add those numbers back to the tree
     
