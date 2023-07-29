@@ -77,59 +77,29 @@ public class BinarySearchTree {
 
     }
 
-    public void remove(int num, BinaryNode node) {
+    public BinaryNode remove(int num, BinaryNode node) {
         if (node == null)
-            return;
+            return null;
 
-        /*
-        if(num < node.value && node.left.value != num ) {
-                //Recurs to left and then returns what needs to be deleted
-                node = node.left;
-                remove(num, node);
-            }
-        else if(num > node.value && node.right.value != num) {
-                //Same thing for right
-                node = node.right;
-                remove(num, node);
-                }
-        else{
-            //remove node
-            if(node.left.value == num) {
-                //Left node needs to be removed + no children
-                if(node.left.left == null && node.left.right == null) {
-                    node.left = null;
-                }
-                else {
-                    
-                }
-            }
-            else if(node.right.value == num) {
-                //Right node needs to be removed + no children
-                if(node.right.left == null && node.right.right == null) {
-                    node.right = null;
-                }
-                else {
-                    node.right = node.right.right;
-                }
-            }
-            */
-            if(num < node.value) {
-                //Needs to go left
-                remove(num, node.left);
-            }
-            else if(num > node.value) {
-                //Needs to go to right
-                remove(num, node.right);
-            }
-            else {
-                if(node.left == null && node.right == null) {
-                    
-                }
-                else if(node.right == null) {
+        if(num < node.value) {
+            //Needs to go left
+            remove(num, node.left);
+        }
+        else if(num > node.value) {
+            //Needs to go to right
+            remove(num, node.right);
+        }
+        else {
+            if (node.left == null)
+                return node.right;
+            else if (node.right == null)
+                return node.left;
 
+                BinaryNode current = node;
+                while (current.left != null) {
+                    current = current.left;
                 }
-            }
-
+        }
     }
 }
 
