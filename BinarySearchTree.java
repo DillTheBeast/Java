@@ -130,7 +130,8 @@ public class BinarySearchTree {
                 }
             }
 
-        }
+    }
+}
 
         //Only get here once what needs to be deleted is found
         // if(done == true) {
@@ -146,8 +147,3 @@ public class BinarySearchTree {
         //         node = null;
         //         remove(num, node.right);
         //     }
-        }
-
-    //Need to make an array for everything being cut off and then just add those numbers back to the tree
-    
-}
