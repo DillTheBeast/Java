@@ -33,6 +33,7 @@ public class BinarySearchTree {
             // BinaryNode root = new BinaryNode(num);
             rootNode = newNode;
             node = rootNode;
+            depth++;
         }
         else {
             if(newNode.value < node.value) {
@@ -72,15 +73,16 @@ public class BinarySearchTree {
                     node = rootNode;
                 }
             }
+            depth++;
         }
-        depth++;
 
     }
-
+/* 
     public BinaryNode remove(int num, BinaryNode node) {
         if (node == null)
             return null;
 
+        //Moving right and left until finding the value needed to be deleted
         if(num < node.value) {
             remove(num, node.left);
         }
@@ -88,13 +90,25 @@ public class BinarySearchTree {
             remove(num, node.right);
         }
         else {
+            //After finding the value check for children 
+            //return if no left and/or right child
             if(node.right == null) {
                 return node.left;
             }
             if(node.left == null) {
                 return node.right;
             }
+
+            //Want to find smallest value in right subtree to replace deleted node
+            //In BST want to provide the smallest number that is larger than the deleted node
+            //Now left subtree doesn't change at all
+            int replace = node.value;
+            for(int i = 0; node.left != null; i++, node = node.left) 
+                replace = node.left.value;
+            
+            remove(replace, node.right);
         }
-        }
+        return node;
     }
+    */
 }
