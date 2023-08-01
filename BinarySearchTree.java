@@ -82,38 +82,19 @@ public class BinarySearchTree {
             return null;
 
         if(num < node.value) {
-            //Needs to go left
             remove(num, node.left);
         }
         else if(num > node.value) {
-            //Needs to go to right
             remove(num, node.right);
         }
         else {
-            if (node.left == null)
-                return node.right;
-            else if (node.right == null)
+            if(node.right == null) {
                 return node.left;
-
-                BinaryNode current = node;
-                while (current.left != null) {
-                    current = current.left;
-                }
+            }
+            if(node.left == null) {
+                return node.right;
+            }
+        }
         }
     }
 }
-
-        //Only get here once what needs to be deleted is found
-        // if(done == true) {
-        //     if (node.left == null && node.right == null) {
-        //         //No childs meaning it can just be deleted
-        //         System.out.println(node);
-        //         node = null;
-        //         System.out.println(node);
-        //     }
-        //     else {
-        //         //Has children to the right and left
-        //         remove(num, node.left);
-        //         node = null;
-        //         remove(num, node.right);
-        //     }
