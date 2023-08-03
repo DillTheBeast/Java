@@ -28,9 +28,9 @@ public class BinarySearchTree {
         }
     }
 
-    public void add(BinaryNode newNode, BinaryNode node) {
+    public void oldAdd(BinaryNode newNode, BinaryNode node) {
         if(depth == -1) {
-            // BinaryNode root = new BinaryNode(num);
+            // BinaryNode root = new BinaryNode(num);s
             rootNode = newNode;
             node = rootNode;
             depth++;
@@ -40,7 +40,7 @@ public class BinarySearchTree {
                 //Need to move left
                 if(node.left != null) {
                     node = node.left;
-                    add(newNode, node);
+                    oldAdd(newNode, node);
                 }
                 else {
                     //BinaryNode left = new BinaryNode(num);
@@ -52,7 +52,7 @@ public class BinarySearchTree {
                 //Need to move right
                 if(node.right != null) {
                     node = node.right;
-                    add(newNode, node);
+                    oldAdd(newNode, node);
                 }
                 else {
                     //BinaryNode right = new BinaryNode(num);
@@ -65,7 +65,7 @@ public class BinarySearchTree {
                 //Going to move left but really my choice
                 if(node.left != null) {
                     node = node.left;
-                    add(newNode, node);
+                    oldAdd(newNode, node);
                 }
                 else {
                     //BinaryNode middle = new BinaryNode(num);
@@ -77,38 +77,87 @@ public class BinarySearchTree {
         }
 
     }
-/* 
-    public BinaryNode remove(int num, BinaryNode node) {
-        if (node == null)
-            return null;
 
-        //Moving right and left until finding the value needed to be deleted
-        if(num < node.value) {
-            remove(num, node.left);
-        }
-        else if(num > node.value) {
-            remove(num, node.right);
+
+
+    public void add(int num, BinaryNode node) {
+        if(depth == -1) {
+            BinaryNode root = new BinaryNode(num);
+            rootNode = root;
+            node = rootNode;
         }
         else {
-            //After finding the value check for children 
-            //return if no left and/or right child
-            if(node.right == null) {
-                return node.left;
+            if(num < node.value) {
+                //Need to move left
+                if(node.left != null) {
+                    node = node.left;
+                    add(num, node);
+                }
+                else {
+                    BinaryNode left = new BinaryNode(num);
+                    node.left = left;
+                    node = rootNode;
+                }
             }
-            if(node.left == null) {
-                return node.right;
+            else if(num > node.value) {
+                //Need to move right
+                if(node.right != null) {
+                    node = node.right;
+                    add(num, node);
+                }
+                else {
+                    BinaryNode right = new BinaryNode(num);
+                    node.right = right;
+                    node = rootNode;
+                }
             }
-
-            //Want to find smallest value in right subtree to replace deleted node
-            //In BST want to provide the smallest number that is larger than the deleted node
-            //Now left subtree doesn't change at all
-            int replace = node.value;
-            for(int i = 0; node.left != null; i++, node = node.left) 
-                replace = node.left.value;
-            
-            remove(replace, node.right);
+            else {
+                //Are the same
+                //Going to move left but really my choice
+                if(node.left != null) {
+                    node = node.left;
+                    add(num, node);
+                }
+                else {
+                    BinaryNode middle = new BinaryNode(num);
+                    node.left = middle;
+                    node = rootNode;
+                }
+            }
         }
-        return node;
+        depth++;
+
     }
-    */
+
+    public BinaryNode remove(BinaryNode node,int value)
+   {
+       if(node==null) 
+       return node;
+       if(value > node.value) //if value if greater than current value
+           node.right=remove(node.right,value);
+        else if(value < node.value)
+           node.left = remove(node.left, value);
+       else 
+       {
+       //if node having max one child
+       if(node.left==null)    
+           return node.right;
+       else if(node.right==null)
+           return node.left;
+       // if node having two children then get the inorder predecessor of node
+       node.value=minimumValue(node.left);
+       //delete the inorder predecessor
+        node.left=remove(node.left,node.value);  
+        }
+       return node;
+   }
+
+   public int minimumValue(BinaryNode ptr)
+   {
+       int min;
+       for(min=ptr.value;ptr.right!=null;ptr=ptr.right)
+       min=ptr.right.value;
+       return min; 
+   }
+
 }

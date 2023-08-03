@@ -51,18 +51,20 @@ public class TEST {
     BinarySearchTree tree = new BinarySearchTree();
     //BinaryNode test = new BinaryNode();
 
-    tree.add(new BinaryNode(5), tree.rootNode);
-    tree.add(new BinaryNode(3), tree.rootNode);
-    tree.add(new BinaryNode(8), tree.rootNode);
-    tree.add(new BinaryNode(7), tree.rootNode);
-    tree.add(new BinaryNode(9), tree.rootNode);
-    tree.add(new BinaryNode(4), tree.rootNode);
-    tree.add(new BinaryNode(2), tree.rootNode);
+    tree.add(5, tree.rootNode);
+    tree.add(4, tree.rootNode);
+    tree.add(4, tree.rootNode);
+    tree.add(2, tree.rootNode);
+    tree.add(8, tree.rootNode);
+    tree.add(9, tree.rootNode);
+
+    
     //System.out.println();
     tree.printTree(tree.rootNode);
     //System.out.println();
-    //tree.remove(2, tree.rootNode);
-    //System.out.println();
-    //tree.printTree(tree.rootNode);
+    tree.remove(tree.rootNode, 2);
+    tree.remove(tree.rootNode, 8);
+    System.out.println();
+    tree.printTree(tree.rootNode);
     }
 }
