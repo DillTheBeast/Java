@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 //Uses LinkedList and Node
-public class TEST {
+public class DataStructureTest {
   public static void main(String[] args) {
     /*
     LinkedList myList = new LinkedList(new Node(1));
