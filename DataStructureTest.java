@@ -4,12 +4,13 @@ import java.util.Scanner;
 //Uses LinkedList and Node
 public class DataStructureTest {
   public static void main(String[] args) {
-    /*
+    /* 
     LinkedList myList = new LinkedList(new Node(1));
     myList.add(new Node(4), 1);
     myList.add(new Node(3), 1);
     myList.add(new Node(2), 1);
     myList.append(new Node(5));
+    myList.delete(2);
 
     myList.printList();
     */
@@ -66,5 +67,6 @@ public class DataStructureTest {
     tree.remove(tree.rootNode, 8);
     System.out.println();
     tree.printTree(tree.rootNode);
+    
     }
 }

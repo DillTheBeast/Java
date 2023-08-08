@@ -26,7 +26,7 @@ public class LinkedList {
     public void add(Node newNode, int targetIDX) {
         curr = head;
         int currIDX = 0;
-        while(currIDX < targetIDX -1 ) {
+        while(currIDX < targetIDX - 1) {
             curr = curr.next;
             currIDX++;
         }
