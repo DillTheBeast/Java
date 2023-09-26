@@ -16,7 +16,7 @@ public class DataStructureTest {
     */
     //Only will work if value in Node is changed back to int
 
-    /* 
+     
     Queue queue = new Queue(3);
     queue.enqueue(3);
     queue.enqueue(4);
@@ -25,9 +25,11 @@ public class DataStructureTest {
     System.out.println();
     queue.dequeue();
     queue.dequeue();
+    int removed = queue.dequeue();
+    System.out.println("Removed Number " + removed);
     queue.enqueue(5);
     queue.printQueue();
-    */
+    
     /*
     Stack stack = new Stack(3);
     stack.push(3);
@@ -35,10 +37,10 @@ public class DataStructureTest {
     stack.push(2);
     stack.pop();
     stack.push(5);
-    int thing = stack.peak();
+    int top = stack.peak();
     stack.printStack();
     
-    System.out.println("thing " + thing);
+    System.out.println("Top " + top);
     
     //correct exception thrown
     //stack.push(3);
@@ -48,7 +50,7 @@ public class DataStructureTest {
     // stack.pop();
     // System.out.println("Top element: " + stack.peak());
     */
-
+/*
     BinarySearchTree tree = new BinarySearchTree();
     //BinaryNode test = new BinaryNode();
 
@@ -67,6 +69,6 @@ public class DataStructureTest {
     tree.remove(tree.rootNode, 8);
     System.out.println();
     tree.printTree(tree.rootNode);
-    
+    */
     }
 }
